@@ -63,7 +63,7 @@ echo form_open_multipart(base_url('magang/daftar'),' class="form-horizontal"');
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address<label style="color: red;">*</label></label>
-                        <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
+                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
@@ -96,13 +96,14 @@ echo form_open_multipart(base_url('magang/daftar'),' class="form-horizontal"');
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="materi" id="yglainnya" value="">
-                            <label class="form-check-label" for="yglainnya">
-                                Yang Lainnya:
+                            <input class="form-check-input" type="radio" name="materi" id="other" value="">
+                            <label class="form-check-label" for="other">
+                                Yang Lainnya...
                             </label>
+                            <input type="text" class="form-control" id="other" name="other">
                         </div>
                         <div class="col-md-3">
-                            <input type="text" class="form-control" id="yglainnya" name="yglainnya" required>
+                            
                         </div>
                     </div>
                     <div class="mb-3">

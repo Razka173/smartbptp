@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Peserta_model extends CI_Model {
+class Surat_model extends CI_Model {
 
 	public function __construct()
 	{
@@ -9,23 +9,23 @@ class Peserta_model extends CI_Model {
 		$this->load->database();
 	}
 
-	// Listing all peserta
+	// Listing all surat
 	public function listing()
 	{
 		$this->db->select('*');
-		$this->db->from('peserta');
-		$this->db->order_by('id_peserta', 'desc');
+		$this->db->from('surat');
+		$this->db->order_by('id_surat', 'desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
 
-	// Detail peserta
-	public function detail($id_peserta)
+	// Detail surat
+	public function detail($id_surat)
 	{
 		$this->db->select('*');
-		$this->db->from('peserta');
-		$this->db->where('id_peserta', $id_peserta);
-		$this->db->order_by('id_peserta', 'desc');
+		$this->db->from('surat');
+		$this->db->where('id_surat', $id_surat);
+		$this->db->order_by('id_surat', 'desc');
 		$query = $this->db->get();
 		return $query->row();
 	}
@@ -33,25 +33,25 @@ class Peserta_model extends CI_Model {
 	// Tambah
 	public function tambah($data)
 	{
-		$this->db->insert('peserta', $data);
+		$this->db->insert('surat', $data);
 		return $this->db->affected_rows();
     }
 
 	// Edit
 	public function edit($data)
 	{
-		$this->db->where('id_peserta', $data['id_peserta']);
-		$this->db->update('peserta',$data);
+		$this->db->where('id_surat', $data['id_surat']);
+		$this->db->update('surat',$data);
 		return $this->db->affected_rows();
     }
 
 	// Delete
 	public function delete($data)
 	{
-		$this->db->where('id_peserta', $data['id_peserta']);
-		$this->db->delete('peserta',$data);
+		$this->db->where('id_surat', $data['id_surat']);
+		$this->db->delete('surat',$data);
 		return $this->db->affected_rows();
-   	}
+	}
 }
 
 /* End of file Peserta_model.php */
