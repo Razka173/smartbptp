@@ -20,12 +20,12 @@ class Simple_login
 		if($check) {
 			$id_user		= $check->id_user;
 			$nama			= $check->nama;
-			$akses_level	= $check->akses_level;
+			$akses_level	= 'admin';
 			// Create session
 			$this->CI->session->set_userdata('id_user',$id_user);
 			$this->CI->session->set_userdata('nama',$nama);
 			$this->CI->session->set_userdata('username',$username);
-			$this->CI->session->set_userdata('akses_level',$akses_level);
+			$this->CI->session->set_userdata('akses_level','admin');
 			// Update last login
 			$data = array(	'id_user'		=> $id_user,
 							'last_login'	=> date('Y-m-d H:i:s'),

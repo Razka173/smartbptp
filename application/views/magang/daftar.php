@@ -20,6 +20,18 @@ if(isset($error)) {
     echo '</p>';
 }
 
+// Notifikasi
+if($this->session->flashdata('sukses')){
+    echo '<p class="alert alert-success">';
+    echo $this->session->flashdata('sukses');
+}
+
+// Notifikasi
+if($this->session->flashdata('warning')){
+    echo '<p class="alert alert-warning">';
+    echo $this->session->flashdata('warning');
+}
+
 // Notifikasi error
 echo validation_errors('<div class="alert alert-warning">','</div>');
 
@@ -34,7 +46,7 @@ echo form_open_multipart(base_url('magang/daftar'),' class="form-horizontal"');
         <div class="row">
             <div class="col-md-2"></div>
             <div class="col-md-8">
-                <img src="<?php echo base_url() ?>assets/magang/img/logobptp.png" alt="" style="height: 200px;">
+                <img src="<?php echo base_url() ?>assets/smartbptp/img/logobptp.png" alt="" style="height: 200px;">
         
                 <h1 style="color: rgb(17, 214, 70);">Formulir Pengajuan Magang/PKL </h1>
                 <h1 style="color: rgb(17, 214, 70);">Balai Pengkajian Teknologi Pertanian Jakarta</h1>
@@ -43,36 +55,36 @@ echo form_open_multipart(base_url('magang/daftar'),' class="form-horizontal"');
                 <!-- <form method="POST" enctype="multipart/form-data"> -->
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama<label style="color: red;">*</label></label>
-                        <input type="text" class="form-control" id="nama" name="nama" required>
+                        <input type="text" class="form-control" id="nama" name="nama" value="<?php echo set_value('nama')?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="instansi" class="form-label">Asal Instansi/Sekolah/Perguruan Tinggi<label style="color: red;">*</label></label>
-                        <input type="text" class="form-control" id="instansi" name="instansi" required>
+                        <input type="text" class="form-control" id="instansi" name="instansi" value="<?php echo set_value('instansi')?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="nomor_induk" class="form-label">Nomor Induk<label style="color: red;">*</label></label>
-                        <input type="text" class="form-control" id="nomor_induk" name="nomor_induk" required>
+                        <input type="text" class="form-control" id="nomor_induk" name="nomor_induk" value="<?php echo set_value('nomor_induk')?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="alamat" class="form-label">Alamat<label style="color: red;">*</label></label>
-                        <input type="text" class="form-control" id="alamat" name="alamat" required>
+                        <input type="text" class="form-control" id="alamat" name="alamat" value="<?php echo set_value('alamat')?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="nomor_telepon" class="form-label">Nomor Telepon<label style="color: red;">*</label></label>
-                        <input type="number" class="form-control" id="nomor_telepon" name="nomor_telepon" required>
+                        <input type="number" class="form-control" id="nomor_telepon" name="nomor_telepon" value="<?php echo set_value('nomor_telepon')?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email address<label style="color: red;">*</label></label>
-                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
+                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" value="<?php echo set_value('email')?>" required>
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">
                         <label for="tanggal_masuk" class="form-label">Tanggal Mulai Magang<label style="color: red;">*</label></label>
-                        <input type="date" class="form-control" id="tanggal_masuk" name="tanggal_masuk" required>
+                        <input type="date" class="form-control" id="tanggal_masuk" name="tanggal_masuk" value="<?php echo set_value('tanggal_masuk')?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="tanggal_keluar" class="form-label">Tanggal Selesai Magang<label style="color: red;">*</label></label>
-                        <input type="date" class="form-control" id="tanggal_keluar" name="tanggal_keluar" required>
+                        <input type="date" class="form-control" id="tanggal_keluar" name="tanggal_keluar" value="<?php echo set_value('tanggal_keluar')?>" required>
                     </div>
 
                     <div class="mb-3">
