@@ -1,0 +1,13 @@
+.btnhijau{
+    color: white;
+    background-color: rgb(17, 214, 70);
+}
+
+.colorlink{
+    color: white;
+
+}
+
+.colorlink:hover{
+    color: yellow;
+}

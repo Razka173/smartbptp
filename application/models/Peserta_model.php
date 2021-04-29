@@ -19,6 +19,55 @@ class Peserta_model extends CI_Model {
 		return $query->result();
 	}
 
+	// Listing semua peserta PKL/Magang tahun ini
+	public function listingthisyear()
+	{
+		$year = date("Y");
+		$this->db->select('*');
+		$this->db->from('peserta');
+		$this->db->where('year(tanggal_masuk)', $year);
+		$this->db->order_by('id_peserta', 'desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	// Listing semua peserta PKL/Magang pada bulan tertentu
+	public function listingbymonth($month)
+	{
+		$this->db->select('*');
+		$this->db->from('peserta');
+		$this->db->where('month(tanggal_masuk)', $month);
+		$this->db->order_by('id_peserta', 'desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	// Cek kuota PKL/Magang pada bulan&tahun tertentu dan materi tertentu (dibatasi permateri di bulan dan tahun tertentu)
+	public function cekKuota($month, $year, $materi)
+	{
+		$this->db->select('*');
+		$this->db->from('peserta');
+		$this->db->where('month(tanggal_masuk)', $month);
+		$this->db->where('year(tanggal_masuk)', $year);
+		$this->db->where('materi', $materi);
+		$this->db->order_by('id_peserta', 'desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	// Cek kuota PKL/Magang pada bulan&tahun tertentu dan materi lainnya (dibatasi permateri di bulan dan tahun tertentu
+	public function cekKuotaLainnya($month, $year, $materi)
+	{
+		$this->db->select('*');
+		$this->db->from('peserta');
+		$this->db->where('month(tanggal_masuk)', $month);
+		$this->db->where('year(tanggal_masuk)', $year);
+		$this->db->like('materi', 'Lainnya');
+		$this->db->order_by('id_peserta', 'desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	// Detail peserta
 	public function detail($id_peserta)
 	{

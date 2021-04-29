@@ -43,7 +43,7 @@ class Simple_login
 	// Fungsi cek login
 	public function cek_login()
 	{
-		// Memeriksa apakah session sudah atau belum, jika belum alihkan ke halaman login
+		// Memeriksa apakah session sudah ada atau belum, jika belum alihkan ke halaman login
 		if($this->CI->session->userdata('username') == "") {
 			$this->CI->session->set_flashdata('warning', 'Anda belum login');
 			redirect(base_url('login'),'refresh');
@@ -87,32 +87,31 @@ class Simple_login
 
 	function time_elapsed_string($datetime, $full = false)
 	{
-    $now = new DateTime;
-    $ago = new DateTime($datetime);
-    $diff = $now->diff($ago);
+	    $now = new DateTime;
+	    $ago = new DateTime($datetime);
+	    $diff = $now->diff($ago);
 
-    $diff->w = floor($diff->d / 7);
-    $diff->d -= $diff->w * 7;
+	    $diff->w = floor($diff->d / 7);
+	    $diff->d -= $diff->w * 7;
 
-    $string = array(
-        'y' => 'year',
-        'm' => 'month',
-        'w' => 'week',
-        'd' => 'day',
-        'h' => 'hour',
-        'i' => 'minute',
-        's' => 'second',
-    );
-    foreach ($string as $k => &$v) {
-        if ($diff->$k) {
-            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
-        } else {
-            unset($string[$k]);
-        }
-    }
-
-    if (!$full) $string = array_slice($string, 0, 1);
-    return $string ? implode(', ', $string) . ' ago' : 'just now';
+	    $string = array(
+	        'y' => 'year',
+	        'm' => 'month',
+	        'w' => 'week',
+	        'd' => 'day',
+	        'h' => 'hour',
+	        'i' => 'minute',
+	        's' => 'second',
+	    );
+	    foreach ($string as $k => &$v) {
+	        if ($diff->$k) {
+	            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+	        } else {
+	            unset($string[$k]);
+	        }
+	    }
+	    if (!$full) $string = array_slice($string, 0, 1);
+	    return $string ? implode(', ', $string) . ' ago' : 'just now';
 	}
 
 }
