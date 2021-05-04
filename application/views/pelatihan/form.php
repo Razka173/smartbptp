@@ -95,7 +95,7 @@ echo form_open_multipart(base_url('pelatihan/daftar'),' class="form-horizontal"'
                     <div class="mb-3">
                         <label class="form-label">Tujuan Kunjungan<label style="color: red;">*</label></label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="tujuan_kunjungan" id="studibanding" value="Studi Banding">
+                            <input class="form-check-input" type="radio" name="tujuan_kunjungan" id="studibanding" value="Studi Banding" checked>
                             <label class="form-check-label" for="studibanding">
                                 Studi Banding
                             </label>

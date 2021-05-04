@@ -23,4 +23,15 @@ class Peserta extends CI_Controller
         );
         $this->load->view('admin/layout/wrapper', $data, FALSE);
     }
+
+    public function dokumen($id_peserta)
+    {
+        $peserta = $this->Peserta_model->detail($id_peserta);
+        $data = array(
+            'title'     => 'Data Peserta',
+            'peserta'   => $peserta,
+            'isi'       => 'admin/peserta/dokumen'
+        );
+        $this->load->view('admin/peserta/dokumen', $data, FALSE);
+    }
 }

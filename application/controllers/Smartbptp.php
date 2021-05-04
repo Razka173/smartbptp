@@ -41,5 +41,5 @@ class Smartbptp extends CI_Controller {
 
 }
 
-/* End of file Magang.php */
-/* Location: ./application/controllers/Magang.php */
+/* End of file Smartbptp.php */
+/* Location: ./application/controllers/Smartbptp.php */

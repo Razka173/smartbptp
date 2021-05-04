@@ -116,7 +116,7 @@ echo form_open_multipart(base_url('pkl/daftar'),' class="form-horizontal"');
                     <div class="mb-3">
                         <label class="form-label">Bidang Materi<label style="color: red;">*</label></label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="materi" id="budidaya" value="Budidaya">
+                            <input class="form-check-input" type="radio" name="materi" id="budidaya" value="Budidaya" checked>
                             <label class="form-check-label" for="budidaya">
                                 Budidaya
                             </label>
@@ -175,29 +175,28 @@ echo form_open_multipart(base_url('pkl/daftar'),' class="form-horizontal"');
                         <div id="anggotaHelp" class="form-text">Contoh : Ivan Adi Putra, Razka Agniatara, Adini Gufroni</div>
                     </div>
 
-
                     <div class="mb-3">
                         <label for="" >Upload Dokumen<label style="color: red;">*</label></label>
-                        <input type="file" class="form-control" name="dokumen" aria-describedby="fileHelp" required>
+                        <input type="file" class="form-control" name="dokumen" aria-describedby="fileHelp" value="<?php echo set_value('dokumen')?>" required>
                         <div id="fileHelp" class="form-text">Upload surat permohonan dalam bentuk gambar atau pdf.</div>
                     </div>
-                   <!--  <div class="mb-3">
-                        <label for="capthca">Captcha<label style="color: red;">*</label></label>
-                        <div><?php echo $captcha['image'] ?></div>
-                        <input type="text" name="captcha" id="captcha" value="" required>
-                    </div> -->
+                    <div class="mb-3">
+                        <label for="capthca">Security Code<label style="color: red;">*</label></label>
+                        <div class="mb-1"><?php echo $captcha['image'] ?></div>
+                        <input type="text" class="form-inline" style="width: 150" placeholder="Security Code" name="captcha" id="captcha" value="" required>
+                    </div>
                     <div class="mb-3">
                         <label style="color: red;"><i>*cukup satu perwakilan anggota yang mengisi</i></label>
                     </div>
                 
-                    <button type="submit" name="submit" class="btn btn-lg btnhijau">Kirim</button>
-
-                    
+                    <button type="submit" name="submit" class="btn btn-lg btnhijau">Kirim</button> 
             </div>
         </div>
     </div>
 
-    <?php echo form_close(); ?>
+<?php 
+echo form_close(); 
+?>
 
     <br><br>
     

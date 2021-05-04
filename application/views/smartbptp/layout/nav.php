@@ -100,7 +100,7 @@
             </li>
         </ul><ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link" href="index.html">SMART BPTP</a>
+                <a class="nav-link" href="<?php echo base_url('smartbptp') ?>">SMART BPTP</a>
             </li>
         </ul>
     </div>

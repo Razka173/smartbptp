@@ -82,18 +82,25 @@ class Pelatihan extends CI_Controller {
 							);
 				$this->Pelatihan_model->tambah($data);
 				$this->session->set_flashdata('sukses', 'Anda telah terdaftar');
-				redirect(base_url('smartbptp/pelatihan'),'refresh');
+				redirect(base_url('pelatihan/terimakasih'),'refresh');
 				// END MASUK DATABASE	
 			}
 		}else{
 			$captcha = $this->set_captcha();
         
 			$data = array(	'title' 	=> 'Pendaftaran Pelatihan Teknologi',
-						'isi'		=> 'pelatihan/form',
-						'captcha'	=> $captcha
+							'isi'		=> 'pelatihan/form',
+							'captcha'	=> $captcha
 						);
 			$this->load->view('pelatihan/form', $data, FALSE);
 		}
+	}
+
+	public function terimakasih(){
+		$data = array(	'title' 	=> 'Terima Kasih!',
+						'url'		=> base_url('smartbptp/pelatihan'),
+					);
+		$this->load->view('pelatihan/thanks', $data, FALSE);
 	}
 
 	function set_captcha(){
@@ -145,5 +152,5 @@ class Pelatihan extends CI_Controller {
 	}
 }
 
-/* End of file Magang.php */
-/* Location: ./application/controllers/Magang.php */
+/* End of file Pelatihan.php */
+/* Location: ./application/controllers/Pelatihan.php */

@@ -1,0 +1,21 @@
+.btnhijau{
+    color: white;
+    background-color: rgb(87, 148, 247);
+
+}
+
+.container-welcome {
+    text-align: center;
+}
+
+.container{
+    max-width: 450px;
+}
+
+body, html{
+	height: 100%; 
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+  	background-size: cover;
+}

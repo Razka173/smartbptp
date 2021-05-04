@@ -12,5 +12,5 @@ class Logout extends CI_Controller {
 
 }
 
-/* End of file Clear.php */
-/* Location: ./application/controllers/Clear.php */
+/* End of file Logout.php */
+/* Location: ./application/controllers/Logout.php */

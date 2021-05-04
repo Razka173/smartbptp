@@ -36,7 +36,7 @@ class Pkl extends CI_Controller {
 			array(	'required'		=> '%s harus diisi',
 					'valid_email'	=> '%s tidak valid'));
 
-		// $valid->set_rules('captcha', 'Captcha', 'trim|callback_check_captcha|required');
+		$valid->set_rules('captcha', 'Captcha', 'trim|callback_check_captcha|required');
 
 		if($valid->run()){
 			// BEGIN CEK KUOTA
@@ -65,7 +65,7 @@ class Pkl extends CI_Controller {
 							);
 					if($this->cek_kuota($data) === FALSE){
 						$month_name = strftime('%B', mktime(0, 0, 0, $month, 10));
-						$this->session->set_flashdata('warning', 'Kuota ' .$materi. ' pada bulan ' .$month_name. ' sudah penuh');
+						$this->session->set_flashdata('warning', 'Kuota ' .$materi. ' pada bulan ' .$month_name. ' sudah penuh atau melebihi kuota maksimal.');
 						redirect(base_url('pkl/daftar'),'refresh');
 					}
 				}
@@ -115,6 +115,7 @@ class Pkl extends CI_Controller {
 			}
 		}else{
 			$captcha = $this->set_captcha();
+			$this->session->set_userdata('captchaword', $captcha['word']);
  
 			$data = array(	'title' 	=> 'Pendaftaran PKL/Magang',
 							'isi'		=> 'pkl/form',
@@ -126,6 +127,8 @@ class Pkl extends CI_Controller {
 
 	function cek_kuota($data)
 	{
+		$kuota_sma = 4;
+		$kuota_mahasiswa = 6;
 		$month = $data['month'];
 		$year = $data['year'];
 		$materi = $data['materi'];
@@ -140,10 +143,10 @@ class Pkl extends CI_Controller {
 			$terdaftar = $terdaftar + $total_terdaftar->jumlah_anggota;
 		}
 		$total = $terdaftar + $jumlah_anggota;
-	    if ($materi == "SMA/SMK" && $total <= 4){
+	    if ($materi == "SMA/SMK" && $total <= $kuota_sma){
 	    	return TRUE;
 	    }
-	    if ($materi != "SMA/SMK" && $total <= 6){
+	    if ($materi != "SMA/SMK" && $total <= $kuota_mahasiswa){
 	    	return TRUE;
 	    }
 	    return FALSE;
@@ -154,7 +157,6 @@ class Pkl extends CI_Controller {
         $config = array(
             'img_path'      => './assets/captcha/',
             'img_url'       => base_url().'assets/captcha/',
-            'font_path'		=> '/assets/fonts/Roboto/Roboto-Black.ttf',
             'img_width'     => '150',
             'img_height'    => 50,
             'word_length'   => 4,
@@ -184,5 +186,5 @@ class Pkl extends CI_Controller {
 	}
 }
 
-/* End of file Magang.php */
-/* Location: ./application/controllers/Magang.php */
+/* End of file Pkl.php */
+/* Location: ./application/controllers/Pkl.php */
