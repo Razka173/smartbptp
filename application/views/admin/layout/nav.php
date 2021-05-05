@@ -23,7 +23,7 @@
 
       <!-- MENU BUKU TAMU -->
       <li class="nav-item <?php if(strpos(strtolower($title),'tamu')){echo 'active';} ?>">
-        <a class="nav-link" href="<?php echo base_url('admin/tamu') ?>">
+        <a class="nav-link" href="<?php echo base_url('admin/bukutamu') ?>">
           <i class="fas fa-fw fa-book"></i>
           <span>Buku Tamu</span></a>
       </li>
@@ -34,7 +34,7 @@
       <li class="nav-item <?php if(strpos(strtolower($title),'peserta')){echo 'active';} ?>">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePeserta" aria-expanded="true" aria-controls="collapsePeserta">
           <i class="fas fa-fw fa-users"></i>
-          <span>Peserta Magang</span>
+          <span>PKL/Magang</span>
         </a>
         <div id="collapsePeserta" class="collapse" aria-labelledby="headingPeserta" data-parent="#accordionSidebar">
           <div class="bg-white py-2 collapse-inner rounded">
@@ -56,25 +56,6 @@
             <h6 class="collapse-header">Menu:</h6>
             <a class="collapse-item" href="<?php echo base_url('admin/user') ?>"><i class="fas fa-fw fa-table"></i> Data Admin</a>
             <a class="collapse-item" href="<?php echo base_url('admin/user/tambah') ?>"><i class="fas fa-fw fa-plus"></i> Tambah Admin</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- MENU KONFIGURASI -->
-      <li class="nav-item <?php if(strpos(strtolower($title),'konfigurasi')){echo 'active';} ?>">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseKonfigurasi" aria-expanded="true" aria-controls="collapseKonfigurasi">
-          <i class="fas fa-fw fa-wrench"></i>
-          <span>Konfigurasi</span>
-        </a>
-        <div id="collapseKonfigurasi" class="collapse" aria-labelledby="headingKonfigurasi" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Menu:</h6>
-            <a class="collapse-item" href="<?php echo base_url('admin/konfigurasi') ?>"><i class="fas fa-fw fa-home"></i> Konfigurasi Umum</a>
-            <a class="collapse-item" href="<?php echo base_url('admin/konfigurasi/logo') ?>"><i class="fas fa-fw fa-image"></i> Konfigurasi Logo</a>
-            <a class="collapse-item" href="<?php echo base_url('admin/konfigurasi/icon') ?>"><i class="fas fa-fw fa-camera-retro"></i> Konfigurasi Icon</a>
-            <a class="collapse-item" href="<?php echo base_url('admin/konfigurasi/slider_primary') ?>"><i class="fas fa-fw fa-chalkboard"></i> Konfigurasi Slider 1</a>
-            <a class="collapse-item" href="<?php echo base_url('admin/konfigurasi/slider_secondary') ?>"><i class="fas fa-fw fa-chalkboard"></i> Konfigurasi Slider 2</a>
-            <a class="collapse-item" href="<?php echo base_url('admin/konfigurasi/slider_other') ?>"><i class="fas fa-fw fa-chalkboard"></i> Konfigurasi Slider 3</a>
           </div>
         </div>
       </li>

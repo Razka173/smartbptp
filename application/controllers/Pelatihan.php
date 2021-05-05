@@ -35,7 +35,7 @@ class Pelatihan extends CI_Controller {
 			array(	'required'		=> '%s harus diisi',
 					'valid_email'	=> '%s tidak valid'));
 
-		// $valid->set_rules('captcha', 'Captcha', 'trim|callback_check_captcha|required');
+		$valid->set_rules('captcha', 'Captcha', 'trim|callback_check_captcha|required');
 
 		if($valid->run()){
 			// BEGIN CEK KUOTA
@@ -43,8 +43,8 @@ class Pelatihan extends CI_Controller {
 			$tanggal_kunjungan = $this->input->post('tanggal_kunjungan');
 			if($this->cek_kuota($tanggal_kunjungan) === FALSE){
 				$tanggal = strtotime("$tanggal_kunjungan");
-				$hari = strftime('%A, %e %B %Y', $tanggal);
-				$this->session->set_flashdata('warning', 'Kuota pelatihan pada hari ' .$hari. ' sudah penuh');
+				$hari = strftime('%e %B %Y', $tanggal);
+				$this->session->set_flashdata('warning', 'Kuota pelatihan pada ' .$hari. ' sudah penuh');
 				redirect(base_url('pelatihan/daftar'),'refresh');
 			}
 
@@ -87,6 +87,7 @@ class Pelatihan extends CI_Controller {
 			}
 		}else{
 			$captcha = $this->set_captcha();
+			$this->session->set_userdata('captchaword', $captcha['word']);
         
 			$data = array(	'title' 	=> 'Pendaftaran Pelatihan Teknologi',
 							'isi'		=> 'pelatihan/form',
@@ -106,14 +107,14 @@ class Pelatihan extends CI_Controller {
 	function set_captcha(){
 		// Captcha configuration
         $config = array(
-            'img_path'      => './assets/captcha/',
-            'img_url'       => base_url().'assets/captcha/',
-            'font_path'		=> '/assets/fonts/Roboto/Roboto-Black.ttf',
+            'img_path'      => './captcha/',
+            'img_url'       => base_url().'captcha/',
             'img_width'     => '150',
             'img_height'    => 50,
             'word_length'   => 4,
             'font_size'     => 16,
             'pool'          => '0123456789',
+            'expiration'	=> '7200',
 
             // White background and border, black text and red grid
         	'colors'        => array( 	'background' => array(255, 255, 255),

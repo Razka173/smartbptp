@@ -53,7 +53,7 @@ class Pkl extends CI_Controller {
 							);
 					if($this->cek_kuota($data) === FALSE){
 						$month_name = strftime('%B', mktime(0, 0, 0, $month, 10));
-						$this->session->set_flashdata('warning', 'Kuota untuk materi lainnya pada bulan ' .$month_name. ' sudah penuh');
+						$this->session->set_flashdata('warning', 'Kuota untuk materi lainnya pada bulan ' .$month_name. ' sudah penuh atau melebihi kuota maksimal.');
 						redirect(base_url('pkl/daftar'),'refresh');
 					}
 			}else{
@@ -125,6 +125,13 @@ class Pkl extends CI_Controller {
 		}
 	}
 
+	public function terimakasih(){
+		$data = array(	'title' 	=> 'Terima Kasih!',
+						'url'		=> base_url('smartbptp/pkl'),
+					);
+		$this->load->view('terima_kasih', $data, FALSE);
+	}
+
 	function cek_kuota($data)
 	{
 		$kuota_sma = 4;
@@ -155,13 +162,14 @@ class Pkl extends CI_Controller {
 	function set_captcha(){
 		// Captcha configuration
         $config = array(
-            'img_path'      => './assets/captcha/',
-            'img_url'       => base_url().'assets/captcha/',
+            'img_path'      => './captcha/',
+            'img_url'       => base_url().'captcha/',
             'img_width'     => '150',
             'img_height'    => 50,
             'word_length'   => 4,
             'font_size'     => 16,
             'pool'          => '0123456789',
+            'expiration'	=> '7200',
 
             // White background and border, black text and red grid
         	'colors'        => array( 	'background' => array(255, 255, 255),

@@ -3,6 +3,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" type="image/x-icon" href="<?php echo base_url() ?>assets/smartbptp/img/logobptp.png" />
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/css/bootstrap.min.css">
@@ -126,6 +127,11 @@ echo form_open_multipart(base_url('pelatihan/daftar'),' class="form-horizontal"'
                         <label for="" >Upload Dokumen<label style="color: red;">*</label></label>
                         <input type="file" class="form-control" name="dokumen" aria-describedby="fileHelp" required>
                         <div id="fileHelp" class="form-text">Upload surat permohonan dalam bentuk gambar atau pdf.</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="capthca">Security Code<label style="color: red;">*</label></label>
+                        <div class="mb-1"><?php echo $captcha['image'] ?></div>
+                        <input type="text" class="form-inline" style="width: 150" placeholder="Security Code" name="captcha" id="captcha" value="" required>
                     </div>
                     <button type="submit" name="kirim" class="btn btnhijau">Kirim</button>
             </div>
