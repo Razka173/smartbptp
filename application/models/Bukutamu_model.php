@@ -30,6 +30,70 @@ class Bukutamu_model extends CI_Model {
 		return $query->row();
 	}
 
+	// Listing semua tamu tahun ini
+	public function listingthisyear()
+	{
+		$year = date("Y");
+		$this->db->select('*, COUNT(*) AS total');
+		$this->db->from('bukutamu');
+		$this->db->where('year(date_created)', $year);
+		$this->db->order_by('id_bukutamu', 'desc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
+	// Hitung semua tamu pada bulan tertentu
+	public function countthisday()
+	{
+		$day = date("d");
+		$this->db->select('COUNT(*) AS total');
+		$this->db->from('bukutamu');
+		$this->db->where('day(date_created)', $day);
+		$this->db->order_by('id_bukutamu', 'desc');
+		$query = $this->db->get();
+		return $query->row();
+	}
+
+	// Hitung semua tamu pada bulan tertentu
+	public function countthisweek()
+	{
+		$date_start = strtotime('last Sunday');
+		$date_end = strtotime('next Sunday');
+		$week_start = date('Y-m-d', $date_start);
+		$week_end = date('Y-m-d', $date_end);
+		$this->db->select('COUNT(*) AS total');
+		$this->db->from('bukutamu');
+		$this->db->where('date_created >=', $week_start);
+		$this->db->where('date_created <=', $week_end);
+		$this->db->order_by('id_bukutamu', 'desc');
+		$query = $this->db->get();
+		return $query->row();
+	}
+
+	// Hitung semua tamu pada bulan tertentu
+	public function countthismonth()
+	{
+		$month = date("m");
+		$this->db->select('COUNT(*) AS total');
+		$this->db->from('bukutamu');
+		$this->db->where('month(date_created)', $month);
+		$this->db->order_by('id_bukutamu', 'desc');
+		$query = $this->db->get();
+		return $query->row();
+	}
+
+	// Hitung semua tamu tahun ini
+	public function countthisyear()
+	{
+		$year = date("Y");
+		$this->db->select('COUNT(*) AS total');
+		$this->db->from('bukutamu');
+		$this->db->where('year(date_created)', $year);
+		$this->db->order_by('id_bukutamu', 'desc');
+		$query = $this->db->get();
+		return $query->row();
+	}
+
 	// Tambah
 	public function tambah($data)
 	{

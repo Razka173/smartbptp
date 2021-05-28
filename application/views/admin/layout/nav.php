@@ -28,21 +28,18 @@
           <span>Buku Tamu</span></a>
       </li>
 
-
-
-      <!-- MENU PESERTA -->
-      <li class="nav-item <?php if(strpos(strtolower($title),'peserta')){echo 'active';} ?>">
-        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePeserta" aria-expanded="true" aria-controls="collapsePeserta">
+      <!-- MENU PKL/MAGANG -->
+      <li class="nav-item <?php if(strpos(strtolower($title),'magang')){echo 'active';} ?>">
+        <a class="nav-link" href="<?php echo base_url('admin/magang') ?>">
           <i class="fas fa-fw fa-users"></i>
-          <span>PKL/Magang</span>
-        </a>
-        <div id="collapsePeserta" class="collapse" aria-labelledby="headingPeserta" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Menu:</h6>
-            <a class="collapse-item" href="<?php echo base_url('admin/peserta') ?>"><i class="fas fa-fw fa-table"></i> Data Peserta</a>
-            <a class="collapse-item" href="<?php echo base_url('admin/peserta/tambah') ?>"><i class="fas fa-fw fa-plus"></i> Tambah Peserta</a>
-          </div>
-        </div>
+          <span>PKL/Magang</span></a>
+      </li>
+
+      <!-- MENU PELATIHAN TEKNOLOGIN -->
+      <li class="nav-item <?php if(strpos(strtolower($title),'pelatihan')){echo 'active';} ?>">
+        <a class="nav-link" href="<?php echo base_url('admin/pelatihan') ?>">
+          <i class="fas fa-fw fa-users"></i>
+          <span>Pelatihan Teknologi</span></a>
       </li>
 
       <!-- MENU ADMIN -->

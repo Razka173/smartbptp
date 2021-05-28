@@ -11,7 +11,7 @@
             <div class="col-sm-3">
                 <div class="thumbnail">
                 <br> 
-                    <a href=""><img src="<?php echo base_url() ?>assets/smartbptp/img/kunjungan2.jpg" width="100%" alt=""></a>
+                    <a href="<?php echo base_url('smartbptp/pelatihan') ?>"><img src="<?php echo base_url() ?>assets/smartbptp/img/kunjungan2.jpg" width="100%" alt=""></a>
                     <div class="caption text-justify">
                         <h5>Studi Banding, Kunjungan Edukatif, dan Pelatihan Teknologi Pertanian Perkotaan</h5>
                         <p style="font-size: 14px;">BPTP Jakarta menerima permohonan untuk melakukan studi banding, kunjungan edukatif, dan pelatihan pertanian perkotaan. Berbagai fasilitas dan teknologi hasil pengkajian yang terdapat di BPTP Jakarta menjadi materi yang menarik untuk dikunjungi dan dipelajari.</p>
@@ -24,11 +24,11 @@
             <div class="col-sm-3">
                 <div class="thumbnail">
                     <br> 
-                    <a href=""><img src="<?php echo base_url() ?>assets/smartbptp/img/pkl2.jpg" width="100%" alt=""></a>
+                    <a href="<?php echo base_url('smartbptp/magang') ?>"><img src="<?php echo base_url() ?>assets/smartbptp/img/pkl2.jpg" width="100%" alt=""></a>
                     <div class="caption text-justify" >
                         <h5>Pelayanan PKL/Magang/Penelitian</h5>
                         <p style="font-size: 14px;">BPTP Jakarta membuka kesempatan siswa Sekolah Menengah Kejuruan untuk melakukan Praktek Kerja Lapangan, serta kesempatan dan peluang kerjasama magang dan penelitian bagi Perguruan Tinggi yang berminat melakukan praktek lapangan/magang ataupun penelitian khususnya mengenai pertanian perkotaan di BPTP Jakarta.</p>
-                        <a href="<?php echo base_url('smartbptp/pkl') ?>" class="btn btnhijau">Info Selengkapnya</a>
+                        <a href="<?php echo base_url('smartbptp/magang') ?>" class="btn btnhijau">Info Selengkapnya</a>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,7 @@ class Smartbptp extends CI_Controller {
     {
         // Construct the parent class
         parent::__construct();
-        $this->load->model('Peserta_model');
+        $this->load->model('Magang_model');
         $this->load->model('Surat_model');
     }
 
@@ -27,12 +27,12 @@ class Smartbptp extends CI_Controller {
 		$this->load->view('smartbptp/layout/wrapper', $data, FALSE);
 	}
 
-	public function pkl()
+	public function magang()
 	{
-		$pkl = $this->Peserta_model->listingthisyear();
-		$test = $this->Peserta_model->cekKuotaLainnya(04, 2021, 'Lainnya');
+		$pkl = $this->Magang_model->listingthisyear();
+		$test = $this->Magang_model->cekKuotaLainnya(04, 2021, 'Lainnya');
 		$data = array(	'title'		=> 'Informasi Magang/PKL',
-						'isi'		=> 'pkl/list',
+						'isi'		=> 'magang/list',
 						'pkl'		=> $pkl,
 						'test'		=> $test
 					);

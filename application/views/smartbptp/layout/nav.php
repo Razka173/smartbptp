@@ -1,4 +1,5 @@
 <body>
+<!-- NAVBAR BEGIN --> 
 <nav class="navbar navbar-expand-md navbar-light fixed-top" style="background-color: #377C58;">
     <!-- Brand -->
     <a class="navbar-brand" href="<?php echo base_url('smartbptp') ?>">
@@ -6,17 +7,17 @@
     </a>
 
     <!-- Toggler/collapsibe Button -->
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- NAVBAR BEGIN -->
     <div class="collapse navbar-collapse navbar-dark" id="collapsibleNavbar">
-        <ul class="navbar-nav ">
+        <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link" href="https://jakarta.litbang.pertanian.go.id/ind/">HOME</a>
             </li>
         </ul>
+
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -33,6 +34,7 @@
                 </ul>
               </li>
         </ul>
+
         <ul class="navbar-nav">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
