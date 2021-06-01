@@ -1,3 +1,19 @@
+<p>
+  <a href="<?php echo base_url('admin/user/tambah') ?>" class="btn btn-success btn-md">
+    <i class="fa fa-plus"></i> Tambah admin
+  </a>
+</p>
+
+
+<?php 
+// Notifikasi
+if($this->session->flashdata('sukses')){
+  echo '<p class="alert alert-success">';
+  echo $this->session->flashdata('sukses');
+  // echo '</div>';
+}
+?>
+
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
   <thead>
     <tr>

@@ -43,7 +43,7 @@
       </li>
 
       <!-- MENU ADMIN -->
-      <li class="nav-item <?php if(strpos(strtolower($title),'users')){echo 'active';} ?>">
+      <li class="nav-item <?php if(strpos(strtolower($title),'admin')){echo 'active';} ?>">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseAdmin" aria-expanded="true" aria-controls="collapseAdmin">
           <i class="fas fa-fw fa-lock"></i>
           <span>Admin</span>

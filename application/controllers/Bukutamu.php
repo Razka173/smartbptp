@@ -33,9 +33,9 @@ class Bukutamu extends CI_Controller {
 		if($valid->run()){
 			// BEGIN MASUK DATABASE
 			$i = $this->input;
-			$data = array(	'nama'				=> $i->post('nama'),
-							'nik'				=> $i->post('nik'),
-							'nomor_telepon'		=> $i->post('nomor_telepon'),
+			$data = array(	'nama'				=> $this->security->xss_clean($i->post('nama')),
+							'nik'				=> $this->security->xss_clean($i->post('nik')),
+							'nomor_telepon'		=> $this->security->xss_clean($i->post('nomor_telepon')),
 							);
 			$this->Bukutamu_model->tambah($data);
 			$this->session->set_flashdata('sukses', 'Terima kasih, Anda telah terdaftar sebagai pengunjung!');

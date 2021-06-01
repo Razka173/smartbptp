@@ -42,6 +42,28 @@ class Magang_model extends CI_Model {
 		return $query->result();
 	}
 
+	// Hitung semua pkl pada bulan tertentu
+	public function countthismonth()
+	{
+		$month = date("m");
+		$this->db->select('SUM(jumlah_anggota) AS total');
+		$this->db->from('peserta');
+		$this->db->where('month(tanggal_masuk)', $month);
+		$query = $this->db->get();
+		return $query->row();
+	}
+
+	// Hitung semua pkl tahun ini
+	public function countthisyear()
+	{
+		$year = date("Y");
+		$this->db->select('SUM(jumlah_anggota) AS total');
+		$this->db->from('peserta');
+		$this->db->where('year(tanggal_masuk)', $year);
+		$query = $this->db->get();
+		return $query->row();
+	}
+
 	// Cek kuota PKL/Magang pada bulan&tahun tertentu dan materi tertentu (dibatasi permateri di bulan dan tahun tertentu)
 	public function cekKuota($month, $year, $materi)
 	{

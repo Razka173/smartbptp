@@ -14,7 +14,7 @@ class Bukutamu_model extends CI_Model {
 	{
 		$this->db->select('*');
 		$this->db->from('bukutamu');
-		$this->db->order_by('nama', 'desc');
+		$this->db->order_by('date_created', 'desc');
 		$query = $this->db->get();
 		return $query->result();
 	}
@@ -49,7 +49,6 @@ class Bukutamu_model extends CI_Model {
 		$this->db->select('COUNT(*) AS total');
 		$this->db->from('bukutamu');
 		$this->db->where('day(date_created)', $day);
-		$this->db->order_by('id_bukutamu', 'desc');
 		$query = $this->db->get();
 		return $query->row();
 	}
@@ -65,7 +64,6 @@ class Bukutamu_model extends CI_Model {
 		$this->db->from('bukutamu');
 		$this->db->where('date_created >=', $week_start);
 		$this->db->where('date_created <=', $week_end);
-		$this->db->order_by('id_bukutamu', 'desc');
 		$query = $this->db->get();
 		return $query->row();
 	}
@@ -77,7 +75,6 @@ class Bukutamu_model extends CI_Model {
 		$this->db->select('COUNT(*) AS total');
 		$this->db->from('bukutamu');
 		$this->db->where('month(date_created)', $month);
-		$this->db->order_by('id_bukutamu', 'desc');
 		$query = $this->db->get();
 		return $query->row();
 	}
@@ -89,7 +86,6 @@ class Bukutamu_model extends CI_Model {
 		$this->db->select('COUNT(*) AS total');
 		$this->db->from('bukutamu');
 		$this->db->where('year(date_created)', $year);
-		$this->db->order_by('id_bukutamu', 'desc');
 		$query = $this->db->get();
 		return $query->row();
 	}

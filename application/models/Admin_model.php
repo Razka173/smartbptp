@@ -36,7 +36,7 @@ class Admin_model extends CI_Model {
 		$this->db->select('*');
 		$this->db->from('users');
 		$this->db->where(array( 'username'	=> $username,
-								'password'	=> $password));
+								'password'	=> SHA1($password)));
 		$this->db->order_by('id_user', 'desc');
 		$query = $this->db->get();
 		return $query->row();

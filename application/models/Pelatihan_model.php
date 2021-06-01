@@ -30,6 +30,28 @@ class Pelatihan_model extends CI_Model {
 		return $query->row();
 	}
 
+	// Hitung semua pelatihan pada bulan tertentu
+	public function countthismonth()
+	{
+		$month = date("m");
+		$this->db->select('COUNT(*) AS total');
+		$this->db->from('pelatihan');
+		$this->db->where('month(date_created)', $month);
+		$query = $this->db->get();
+		return $query->row();
+	}
+
+	// Hitung semua pelatihan tahun ini
+	public function countthisyear()
+	{
+		$year = date("Y");
+		$this->db->select('COUNT(*) AS total');
+		$this->db->from('pelatihan');
+		$this->db->where('year(date_created)', $year);
+		$query = $this->db->get();
+		return $query->row();
+	}
+
 	// Cek Kuota Pelatihan pada hari tertentu (perhari dibatasi hanya 1)
 	public function cekKuota($date)
 	{

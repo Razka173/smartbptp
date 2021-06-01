@@ -1,3 +1,5 @@
+<?php setlocale (LC_TIME, 'id_ID'); ?>    
+
     <!-- Content Wrapper -->
     <div id="content-wrapper" class="d-flex flex-column">
 
@@ -33,13 +35,13 @@
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
                 <p class="dropdown-item">
-                  Hak Akses: <?php echo $this->session->userdata('username');?>
+                  Username: <?php echo $this->session->userdata('username');?>
                 </p>
                 <small class="dropdown-item">
-                  <?php echo date('d M Y');?>
+                  <?php echo strftime('%A, %e %B %Y');?>
                 </small>
                 <div class="dropdown-divider"></div>
-                <!-- <a class="dropdown-item" href="#">
+                <a class="dropdown-item" href="#">
                   <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
                   Profile
                 </a>
@@ -47,7 +49,7 @@
                   <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
                   Settings
                 </a>
-                <a class="dropdown-item" href="#">
+                <!-- <a class="dropdown-item" href="#">
                   <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i>
                   Activity Log
                 </a> -->

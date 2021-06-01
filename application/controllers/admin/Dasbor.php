@@ -10,6 +10,8 @@ class Dasbor extends CI_Controller {
 		// Proteksi halaman
 		$this->simple_login->cek_login();
 		$this->load->model('Bukutamu_model');
+		$this->load->model('Magang_model');
+		$this->load->model('Pelatihan_model');
 		$this->load->library('ciqrcode');
 	}
 
@@ -21,13 +23,21 @@ class Dasbor extends CI_Controller {
 		$minggu_ini = $this->Bukutamu_model->countthisweek();
 		$bulan_ini = $this->Bukutamu_model->countthismonth();
 		$tahun_ini = $this->Bukutamu_model->countthisyear();
-		$data = array(	'title'			=> 'Halaman Dashboard',
-						'tamu'			=> $tamu,
-						'hari_ini'		=> $hari_ini,
-						'minggu_ini'	=> $minggu_ini,
-						'bulan_ini'		=> $bulan_ini,
-						'tahun_ini'		=> $tahun_ini,
-						'isi'			=> 'admin/dasbor/list',
+		$magang_tahun_ini = $this->Magang_model->countthisyear();
+		$magang_bulan_ini = $this->Magang_model->countthismonth();
+		$pelatihan_tahun_ini = $this->Pelatihan_model->countthisyear();
+		$pelatihan_bulan_ini = $this->Pelatihan_model->countthismonth();
+		$data = array(	'title'					=> 'Halaman Dashboard',
+						'tamu'					=> $tamu,
+						'hari_ini'				=> $hari_ini,
+						'minggu_ini'			=> $minggu_ini,
+						'bulan_ini'				=> $bulan_ini,
+						'tahun_ini'				=> $tahun_ini,
+						'magang_tahun_ini'		=> $magang_tahun_ini,
+						'magang_bulan_ini'		=> $magang_bulan_ini,
+						'pelatihan_tahun_ini'	=> $pelatihan_tahun_ini,
+						'pelatihan_bulan_ini'	=> $pelatihan_bulan_ini,
+						'isi'					=> 'admin/dasbor/list',
 						
 					);
 		$this->load->view('admin/layout/wrapper', $data, FALSE);

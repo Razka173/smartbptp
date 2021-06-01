@@ -25,6 +25,18 @@ class Bukutamu extends CI_Controller {
 		$this->load->view('admin/layout/wrapper', $data, FALSE);
 	}
 
+	public function pdf()
+	{
+		$tamu = $tamu = $this->Bukutamu_model->listing();
+		$data = array(	'title'			=> 'Cetak Buku Tamu',
+						'tamu'			=> $tamu,
+					);
+		$html 	= $this->load->view('admin/bukutamu/cetak', $data, true);
+		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-P']);
+		$mpdf->WriteHTML($html);
+		$mpdf->Output();
+	}
+
 }
 
 /* End of file Bukutamu.php */
