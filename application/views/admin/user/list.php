@@ -2,20 +2,10 @@
   <a href="<?php echo base_url('admin/user/tambah') ?>" class="btn btn-success btn-md">
     <i class="fa fa-plus"></i> Tambah admin
   </a>
-
-  <a href="<?php echo base_url('admin/user/edit_profile/').$this->session->userdata('id_user') ?>" class="btn btn-warning btn-md">
-    <i class="fa fa-edit"></i> Edit Profile
+  <a href="<?php echo base_url('admin/user/detail/').$this->session->userdata('id_user') ?>" class="btn btn-info btn-md">
+    <i class="fa fa-eye"></i> Profile
   </a>
-
-  <a href="<?php echo base_url('admin/user/edit_email/').$this->session->userdata('id_user') ?>" class="btn btn-warning btn-md">
-    <i class="fa fa-edit"></i> Edit Email
-  </a>
-
-  <a href="<?php echo base_url('admin/user/edit_username/').$this->session->userdata('id_user') ?>" class="btn btn-warning btn-md">
-    <i class="fa fa-edit"></i> Edit Username
-  </a>
-
-  <a href="<?php echo base_url('admin/user/ganti_password/').$this->session->userdata('id_user') ?>" class="btn btn-info btn-md">
+  <a href="<?php echo base_url('admin/user/ganti_password/').$this->session->userdata('id_user') ?>" class="btn btn-danger btn-md">
     <i class="fa fa-edit"></i> Ganti Password
   </a>
 </p>

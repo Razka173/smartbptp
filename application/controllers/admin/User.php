@@ -71,6 +71,16 @@ class User extends CI_Controller
         // End masuk database
     }
 
+    public function detail($id)
+    {
+        $object = $this->Admin_model->detail($id);
+        $data = array(  'title'             => 'Detail: '.$object->nama,
+                        'object'            => $object,
+                        'isi'               => 'admin/user/detail'
+                    );
+        $this->load->view('admin/layout/wrapper', $data, FALSE);    
+    }
+
     public function edit_profile($id_user)
     {
         $user = $this->Admin_model->detail($id_user);
