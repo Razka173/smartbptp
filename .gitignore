@@ -32,4 +32,5 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 
 captcha/*
 
-assets/upload/*
+assets/upload/pelatihan/*
+assets/upload/pkl/*
