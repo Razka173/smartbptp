@@ -19,6 +19,16 @@ class Pelatihan_model extends CI_Model {
 		return $query->result();
 	}
 
+	// Listing all pelatihan
+	public function listingAsc()
+	{
+		$this->db->select('*');
+		$this->db->from('pelatihan');
+		$this->db->order_by('id_pelatihan', 'asc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	// Detail pelatihan
 	public function detail($id_pelatihan)
 	{

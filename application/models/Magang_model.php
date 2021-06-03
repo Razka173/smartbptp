@@ -19,6 +19,16 @@ class Magang_model extends CI_Model {
 		return $query->result();
 	}
 
+	// Listing all peserta
+	public function listingAsc()
+	{
+		$this->db->select('*');
+		$this->db->from('peserta');
+		$this->db->order_by('id_peserta', 'asc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	// Listing semua peserta PKL/Magang tahun ini
 	public function listingthisyear()
 	{

@@ -24,6 +24,16 @@ class Magang extends CI_Controller
         $this->load->view('admin/layout/wrapper', $data, FALSE);
     }
 
+    public function detail($id)
+    {
+        $object = $this->Magang_model->detail($id);
+        $data = array(  'title'             => 'Detail: '.$object->nama,
+                        'object'            => $object,
+                        'isi'               => 'admin/magang/detail'
+                    );
+        $this->load->view('admin/layout/wrapper', $data, FALSE);    
+    }
+
     public function dokumen($id_peserta)
     {
         $peserta = $this->Magang_model->detail($id_peserta);
@@ -34,4 +44,30 @@ class Magang extends CI_Controller
         );
         $this->load->view('admin/magang/dokumen', $data, FALSE);
     }
+
+    public function pdf()
+    {
+        $peserta = $this->Magang_model->listingAsc();
+        $data = array(  'title'         => 'Daftar Peserta PKL/Magang',
+                        'peserta'       => $peserta,
+                    );
+        $html   = $this->load->view('admin/magang/cetak', $data, true);
+        $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-P']);
+        $mpdf->WriteHTML($html);
+        $mpdf->Output();
+    }
+
+    // Delete magang
+    public function delete($id_peserta)
+    {
+        // Proses hapus gambar
+        $magang = $this->Magang_model->detail($id_peserta);
+        unlink('./assets/upload/pkl/'.$magang->dokumen);
+        // End proses hapus
+        $data = array('id_peserta'   => $id_peserta);
+        $this->Magang_model->delete($data);
+        $this->session->set_flashdata('sukses', 'Data telah dihapus');
+        redirect(base_url('admin/magang'),'refresh');
+    }
+
 }

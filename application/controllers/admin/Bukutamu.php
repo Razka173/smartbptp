@@ -27,8 +27,8 @@ class Bukutamu extends CI_Controller {
 
 	public function pdf()
 	{
-		$tamu = $tamu = $this->Bukutamu_model->listing();
-		$data = array(	'title'			=> 'Cetak Buku Tamu',
+		$tamu = $this->Bukutamu_model->listingAsc();
+		$data = array(	'title'			=> 'Daftar Tamu BPTP Jakarta',
 						'tamu'			=> $tamu,
 					);
 		$html 	= $this->load->view('admin/bukutamu/cetak', $data, true);

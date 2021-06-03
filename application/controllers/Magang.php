@@ -110,7 +110,7 @@ class Magang extends CI_Controller {
 							);
 				$this->Magang_model->tambah($data);
 				$this->session->set_flashdata('sukses', 'Anda telah terdaftar');
-				redirect(base_url('smartbptp/magang'),'refresh');
+				redirect(base_url('magang/terimakasih'),'refresh');
 				// END MASUK DATABASE	
 			}
 		}else{
@@ -127,9 +127,9 @@ class Magang extends CI_Controller {
 
 	public function terimakasih(){
 		$data = array(	'title' 	=> 'Terima Kasih!',
-						'url'		=> base_url('smartbptp/pkl'),
+						'url'		=> base_url('smartbptp/magang'),
 					);
-		$this->load->view('terima_kasih', $data, FALSE);
+		$this->load->view('magang/terima_kasih', $data, FALSE);
 	}
 
 	function cek_kuota($data)

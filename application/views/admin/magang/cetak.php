@@ -70,25 +70,25 @@
 <body onload="print()">
 	<div class="cetak">
 		<?php setlocale (LC_TIME, 'id_ID'); ?>
-		<h1><?php echo "Daftar Tamu BPTP Jakarta" ?></h1>
+		<h1><?php echo $title ?></h1>
 		<table class="table table-bordered" width="100%">
 		<thead>
 			<tr class="bg-success">
 				<th width=5%>NO</th>
 				<th width=20%>NAMA</th>
-				<th width=20%>NIK</th>
-				<th width=20%>NOMOR TELEPON</th>
-				<th width=20%>TANGGAL KUNJUNGAN</th>
+				<th width=20%>INSTANSI</th>
+				<th width=20%>MATERI</th>
+				<th width=20%>BULAN MASUK</th>
 			</tr>
 		</thead>
 		<tbody>
-			<?php $i=1; foreach($tamu as $tamu) { ?>
+			<?php $i=1; foreach($peserta as $peserta) { ?>
 			<tr>
 				<td> <?php echo $i ?> </td>
-				<td> <?php if(strlen($tamu->nama)>30){echo substr($tamu->nama, 0, 19)."...";}else{echo $tamu->nama;} ?></td>
-				<td> <?php echo $tamu->nik ?> </td>
-				<td> <?php if(strlen($tamu->nomor_telepon)>15){echo substr($tamu->nomor_telepon, 0, 14)."...";}else{echo $tamu->nomor_telepon;} ?> </td>
-				<td><?php echo strftime('%e %B %Y %R', strtotime($tamu->date_created)) ?></td>
+				<td> <?php if(strlen($peserta->nama)>30){echo substr($peserta->nama, 0, 19)."...";}else{echo $peserta->nama;} if($peserta->jumlah_anggota>1){echo "(Klmpk)";}?></td>
+				<td> <?php if(strlen($peserta->instansi)>30){echo substr($peserta->instansi, 0, 30)."...";}else{echo $peserta->instansi;} ?> </td>
+				<td> <?php if(strlen($peserta->materi)>30){echo substr($peserta->materi, 0, 30)."...";}else{echo $peserta->materi;} ?> </td>
+				<td><?php echo strftime('%B %Y', strtotime($peserta->tanggal_masuk)) ?></td>
 			</tr>
 			<?php $i++; } ?>
 		</tbody>

@@ -19,6 +19,16 @@ class Bukutamu_model extends CI_Model {
 		return $query->result();
 	}
 
+	// Listing all bukutamu asc
+	public function listingAsc()
+	{
+		$this->db->select('*');
+		$this->db->from('bukutamu');
+		$this->db->order_by('date_created', 'asc');
+		$query = $this->db->get();
+		return $query->result();
+	}
+
 	// Detail
 	public function detail($id_bukutamu)
 	{

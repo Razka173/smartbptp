@@ -1,4 +1,10 @@
 <?php setlocale (LC_TIME, 'id_ID'); ?>
+<p>
+  <a href="<?php echo base_url('admin/magang/pdf') ?>" class="btn btn-success btn-md">
+    <i class="fa fa-print"></i> Cetak PDF
+  </a>
+</p>
+
 <h2>Total Peserta Magang/PKL: <?= count($peserta); ?> Peserta</h2>
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
@@ -16,7 +22,7 @@
         foreach ($peserta as $peserta) { ?>
         <tr>
             <td><?php echo $no ?></td>
-            <td><?php echo $peserta->nama ?></td>
+            <td><?php echo $peserta->nama; if($peserta->jumlah_anggota>1){echo " (kelompok)";} ?></td>
             <td><?php echo $peserta->instansi ?></td>
             <td><?php echo $peserta->materi ?></td>
             <td><?php echo strftime('%B %Y', strtotime($peserta->tanggal_masuk)) ?></td>

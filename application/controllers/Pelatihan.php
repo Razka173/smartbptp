@@ -101,7 +101,7 @@ class Pelatihan extends CI_Controller {
 		$data = array(	'title' 	=> 'Terima Kasih!',
 						'url'		=> base_url('smartbptp/pelatihan'),
 					);
-		$this->load->view('pelatihan/thanks', $data, FALSE);
+		$this->load->view('pelatihan/terima_kasih', $data, FALSE);
 	}
 
 	function set_captcha(){
