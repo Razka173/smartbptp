@@ -1,3 +1,11 @@
+<p class="pull-right">
+	<div class="btn-group pull-right">
+		<a href="<?php echo base_url('admin/user') ?>" title="kembali" class="btn btn-info btn-md">
+			<i class="fa fa-backward"></i> Kembali
+		</a>
+	</div>
+</p>
+
 <?php
 // Notifikasi error
 echo validation_errors('<div class="alert alert-warning">','</div>');

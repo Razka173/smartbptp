@@ -5,6 +5,7 @@
 		</a>
 	</div>
 </p>
+
 <div class="clearfix"></div><hr>
 <table class="table table-bordered">
 <thead>

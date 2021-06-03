@@ -2,6 +2,22 @@
   <a href="<?php echo base_url('admin/user/tambah') ?>" class="btn btn-success btn-md">
     <i class="fa fa-plus"></i> Tambah admin
   </a>
+
+  <a href="<?php echo base_url('admin/user/edit_profile/').$this->session->userdata('id_user') ?>" class="btn btn-warning btn-md">
+    <i class="fa fa-edit"></i> Edit Profile
+  </a>
+
+  <a href="<?php echo base_url('admin/user/edit_email/').$this->session->userdata('id_user') ?>" class="btn btn-warning btn-md">
+    <i class="fa fa-edit"></i> Edit Email
+  </a>
+
+  <a href="<?php echo base_url('admin/user/edit_username/').$this->session->userdata('id_user') ?>" class="btn btn-warning btn-md">
+    <i class="fa fa-edit"></i> Edit Username
+  </a>
+
+  <a href="<?php echo base_url('admin/user/ganti_password/').$this->session->userdata('id_user') ?>" class="btn btn-info btn-md">
+    <i class="fa fa-edit"></i> Ganti Password
+  </a>
 </p>
 
 
@@ -10,6 +26,11 @@
 if($this->session->flashdata('sukses')){
   echo '<p class="alert alert-success">';
   echo $this->session->flashdata('sukses');
+  // echo '</div>';
+}
+if($this->session->flashdata('warning')){
+  echo '<p class="alert alert-warning">';
+  echo $this->session->flashdata('warning');
   // echo '</div>';
 }
 ?>
