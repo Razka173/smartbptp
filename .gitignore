@@ -32,5 +32,11 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 
 captcha/*
 
-assets/upload/pelatihan/*
-assets/upload/pkl/*
+assets/upload/pelatihan/*.jpg
+assets/upload/pelatihan/*.png
+assets/upload/pelatihan/*.jpeg
+assets/upload/pelatihan/*.pdf
+assets/upload/pkl/*.jpg
+assets/upload/pelatihan/*.png
+assets/upload/pelatihan/*.jpeg
+assets/upload/pelatihan/*.pdf
