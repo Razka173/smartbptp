@@ -30,9 +30,9 @@
 
     <div class="container-welcome" >
         <br>
-        <p style="font-family: monospace;" class="fs-2 text-light">Selamat Datang</p>
-        <p style="font-family: monospace;" class="fs-6 text-light">Calon Pengunjung Balai Pengkajian Teknologi Pertanian Jakarta</p>
-        <p style="font-family: monospace;" class="fs-7 text-light"></p>
+        <p style="font-family: sans-serif;" class="fs-2 text-light">Selamat Datang</p>
+        <p style="font-family: sans-serif;" class="fs-6 text-light">Calon Pengunjung Balai Pengkajian Teknologi Pertanian Jakarta</p>
+        <p style="font-family: sans-serif;" class="fs-7 text-light"></p>
         <br>
     </div>
 
