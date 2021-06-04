@@ -65,6 +65,10 @@ echo form_open_multipart(base_url('bukutamu'),' class="form-horizontal"');
                     <div class="mb-4">
                         <input type="text" placeholder="Nomor Telepon" class="form-control" id="nomor_telepon" name="nomor_telepon" value="<?php echo set_value('nomor_telepon')?>" required>
                     </div>
+                    <div class="mb-3">
+                        <div class="mb-1"><?php echo $captcha['image'] ?></div>
+                        <input type="text" class="form-inline" style="width: 150" placeholder="Security Code" name="captcha" id="captcha" value="" required>
+                    </div>
                     <button type="submit" name="submit" class="btn btnhijau col-md-8">Submit</button>
 <?php 
 echo form_close(); 
