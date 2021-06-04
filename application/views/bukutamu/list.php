@@ -57,6 +57,14 @@ echo form_open_multipart(base_url('bukutamu'),' class="form-horizontal"');
                     <div class="mb-3">
                         <input type="text" placeholder="Nama Lengkap" class="form-control" id="nama" name="nama" value="<?php echo set_value('nama')?>" required>
                     </div>
+
+                    <div class="mb-3">
+                        <input type="text" placeholder="Asal Instansi" class="form-control" id="instansi" name="instansi" value="<?php echo set_value('instansi')?>" required>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="text" placeholder="Tujuan Kunjungan" class="form-control" id="tujuan" name="tujuan" value="<?php echo set_value('tujuan')?>" required>
+                    </div>
                     
                     <div class="mb-3">
                         <input type="text" placeholder="NIK" class="form-control" id="nik" name="nik" value="<?php echo set_value('nik')?>" required>
