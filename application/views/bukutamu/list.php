@@ -29,20 +29,11 @@
 
     <br>
 
-<<<<<<< HEAD
-    <div class="container-welcome" >
-        <br>
-        <p style="font-family: sans-serif;" class="fs-2 text-light">Selamat Datang</p>
-        <p style="font-family: sans-serif;" class="fs-6 text-light">Calon Pengunjung Balai Pengkajian Teknologi Pertanian Jakarta</p>
-        <p style="font-family: sans-serif;" class="fs-7 text-light"></p>
-        <br>
-=======
     <div class="container-welcome mt-5" >
         <p style="font-family: monospace;" class="fs-2 text-light">Selamat Datang</p>
         <p style="font-family: monospace;" class="fs-6 text-light">Calon Pengunjung Balai Pengkajian Teknologi Pertanian Jakarta</p>
         <p style="font-family: monospace;" class="fs-7 text-light"></p>
 
->>>>>>> 916159ae8e61de868b59043eb2ae01eff92b7d6f
     </div>
 
     <div class="container" style= "border: 2px solid rgb(191, 255, 196); border-radius: 2%; background-color: rgb(255,255,255); padding: 1px; width: 90%">
