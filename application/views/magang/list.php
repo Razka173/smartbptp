@@ -6,26 +6,26 @@
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="col-md-3">
-                <div class="card" style="width: 17rem;">
+        <div class="row row-cols-2 row-cols-md-4">
+            <div class="col-mb-4">
+                
                     <img src="<?php echo base_url() ?>assets/smartbptp/img/kunjungan2.jpg" class="card-img-top" alt="...">
-                  </div>
+                  
             </div>
-            <div class="col-md-3">
-                <div class="card" style="width: 17rem;">
+            <div class="col-mb-4">
+                
                     <img src="<?php echo base_url() ?>assets/smartbptp/img/kunjungan2.jpg" class="card-img-top" alt="...">
-                  </div>
+                  
             </div>
-            <div class="col-md-3">
-                <div class="card" style="width: 17rem;">
+            <div class="col-mb-4">
+                
                     <img src="<?php echo base_url() ?>assets/smartbptp/img/kunjungan2.jpg" class="card-img-top" alt="...">
-                  </div>
+                  
             </div>
-            <div class="col-md-3">
-                <div class="card" style="width: 17rem;">
+            <div class="col-mb-4">
+                
                     <img src="<?php echo base_url() ?>assets/smartbptp/img/kunjungan2.jpg" class="card-img-top" alt="...">
-                  </div>
+                  
             </div>
         </div>
     </div>
@@ -40,7 +40,7 @@
 
     <div class="container"></div>
 
-    <div class="container table-responsive-sm">
+    <div class="container table-responsive">
         <br> <br>
         <h5>Daftar Mahasiswa PKL Tahun <?php echo date("Y"); ?></h5>
         <table class="table table-bordered">

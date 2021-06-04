@@ -30,7 +30,9 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 /tests/tests/
 /tests/results/
 
-captcha/*
+captcha/*.jpg
+captcha/*.jpeg
+captcha/*.pnh
 
 assets/upload/pelatihan/*.jpg
 assets/upload/pelatihan/*.png
