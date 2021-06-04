@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="<?php echo base_url() ?>assets/bukutamu/index.css">
     <title><?php echo (isset($title)) ? $title : "Formulir Data Diri Pengunjung BPTP Jakarta"; ?></title>
 </head>
+
 <body>
     <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" >
         <!-- Brand -->
@@ -28,18 +29,18 @@
 
     <br>
 
-    <div class="container-welcome" >
-        <br>
+    <div class="container-welcome mt-5" >
         <p style="font-family: monospace;" class="fs-2 text-light">Selamat Datang</p>
         <p style="font-family: monospace;" class="fs-6 text-light">Calon Pengunjung Balai Pengkajian Teknologi Pertanian Jakarta</p>
         <p style="font-family: monospace;" class="fs-7 text-light"></p>
-        <br>
+
     </div>
 
-    <div class="container" style= "border: 2px solid rgb(191, 255, 196); border-radius: 2%; background-color: rgb(255,255,255); padding: 40px; ">
-        <div class="row">
-            <div class="col-md-1 col-md-offset-2"></div>
-            <div class="col-md-4 col-md-offset-6 col-lg-10 text-center">
+    <div class="container" style= "border: 2px solid rgb(191, 255, 196); border-radius: 2%; background-color: rgb(255,255,255); padding: 1px; width: 90%">
+        <div class="row justify-content-center">
+            <!-- <div class="col-md-1 col-md-offset-2"></div> -->
+            <div class="col-10 col-sm-10 col-md-10 col-lg-10 text-center">
+
 <?php  
 // Notifikasi error
 echo validation_errors('<div class="alert alert-danger">','</div>');
@@ -54,30 +55,30 @@ if($this->session->flashdata('sukses')){
 // Form open
 echo form_open_multipart(base_url('bukutamu'),' class="form-horizontal"');
 ?>
-                    <div class="mb-3">
+                    <div class="mb-1 mt-5">
                         <input type="text" placeholder="Nama Lengkap" class="form-control" id="nama" name="nama" value="<?php echo set_value('nama')?>" required>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <input type="text" placeholder="Asal Instansi" class="form-control" id="instansi" name="instansi" value="<?php echo set_value('instansi')?>" required>
                     </div>
 
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <input type="text" placeholder="Tujuan Kunjungan" class="form-control" id="tujuan" name="tujuan" value="<?php echo set_value('tujuan')?>" required>
                     </div>
                     
-                    <div class="mb-3">
+                    <div class="mb-1">
                         <input type="text" placeholder="NIK" class="form-control" id="nik" name="nik" value="<?php echo set_value('nik')?>" required>
                     </div>
 
-                    <div class="mb-4">
+                    <div class="mb-1">
                         <input type="text" placeholder="Nomor Telepon" class="form-control" id="nomor_telepon" name="nomor_telepon" value="<?php echo set_value('nomor_telepon')?>" required>
                     </div>
-                    <div class="mb-3">
-                        <div class="mb-1"><?php echo $captcha['image'] ?></div>
-                        <input type="text" class="form-inline" style="width: 150" placeholder="Security Code" name="captcha" id="captcha" value="" required>
+                    <div class="mb-2 mt-2">
+                        <div class="mb-1"><?php echo $captcha['image'] ?>
+                        <input type="text" class="form-control" placeholder="Security Code" name="captcha" id="captcha" value="" required>
                     </div>
-                    <button type="submit" name="submit" class="btn btnhijau col-md-8">Submit</button>
+                    <button type="submit" name="submit" class="btn btnhijau col-6">Submit</button>
 <?php 
 echo form_close(); 
 ?>
