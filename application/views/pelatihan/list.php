@@ -34,7 +34,7 @@
               </div>
             <div class="col-mb-2 text-justify">
                 <p>BPTP Jakarta menerima permohonan untuk melakukan studi banding, kunjungan edukatif, dan pelatihan pertanian perkotaan. Berbagai fasilitas dan teknologi hasil pengkajian yang terdapat di BPTP Jakarta menjadi materi yang menarik untuk dikunjungi dan dipelajari.</p>
-                <a href="form/form-pelatihan.php" class="btn btnhijau">Daftar Disini</a>
+                <a href="<?php echo base_url('pelatihan/daftar') ?>" class="btn btnhijau">Daftar Disini</a>
             </div>
         </div>
     </div>

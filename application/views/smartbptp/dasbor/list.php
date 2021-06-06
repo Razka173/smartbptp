@@ -26,7 +26,7 @@
                     <br> 
                     <a href="<?php echo base_url('smartbptp/magang') ?>"><img src="<?php echo base_url() ?>assets/smartbptp/img/magang.jpg" width="100%" alt=""></a>
                     <div class="caption text-justify" >
-                        <h5>Pelayanan PKL/Magang/Penelitian</h5>
+                        <h5>Pelayanan PKL / Magang / Penelitian</h5>
                         <p style="font-size: 14px;">BPTP Jakarta membuka kesempatan siswa Sekolah Menengah Kejuruan untuk melakukan Praktek Kerja Lapangan, serta kesempatan dan peluang kerjasama magang dan penelitian bagi Perguruan Tinggi yang berminat melakukan praktek lapangan/magang ataupun penelitian khususnya mengenai pertanian perkotaan di BPTP Jakarta.</p>
                         <a href="<?php echo base_url('smartbptp/magang') ?>" class="btn btnhijau">Info Selengkapnya</a>
                     </div>
