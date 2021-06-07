@@ -9,11 +9,6 @@
 			font-family: Arial;
 			font-size: 12px;
 		}
-		.cetak {
-			width: 19cm;
-			height: 27cm;
-			padding: 1cm;
-		}
 		table {
 			border: solid thin #000;
 			border-collapse: collapse;
@@ -39,11 +34,6 @@
 		body {
 			font-family: Arial;
 			font-size: 12px;
-		}
-		.cetak {
-			width: 19cm;
-			height: 27cm;
-			padding: 1cm;
 		}
 		table {
 			border: solid thin #000;

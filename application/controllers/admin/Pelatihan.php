@@ -47,14 +47,15 @@ class Pelatihan extends CI_Controller
 
     public function pdf()
     {
+        $namafile = "pelatihan_";
         $pelatihan = $this->Pelatihan_model->listingAsc();
         $data = array(  'title'         => 'Daftar Pelatihan Teknologi',
                         'peserta'       => $pelatihan,
                     );
         $html   = $this->load->view('admin/pelatihan/cetak', $data, true);
-        $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-P']);
+        $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4', 'orientation' => 'L']);
         $mpdf->WriteHTML($html);
-        $mpdf->Output();
+        $mpdf->Output($namafile.date("Y/m/d").'.pdf', 'I');
     }
 
     // Delete pelatihan

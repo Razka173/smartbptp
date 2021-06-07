@@ -27,14 +27,15 @@ class Bukutamu extends CI_Controller {
 
 	public function pdf()
 	{
+		$namafile = "Bukutamu_";
 		$tamu = $this->Bukutamu_model->listingAsc();
 		$data = array(	'title'			=> 'Daftar Tamu BPTP Jakarta',
 						'tamu'			=> $tamu,
 					);
 		$html 	= $this->load->view('admin/bukutamu/cetak', $data, true);
-		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-P']);
+		$mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4', 'orientation' => 'L']);
 		$mpdf->WriteHTML($html);
-		$mpdf->Output();
+		$mpdf->Output($namafile.date("Y/m/d").'.pdf', 'I');
 	}
 
 }

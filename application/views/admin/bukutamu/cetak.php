@@ -9,11 +9,6 @@
 			font-family: Arial;
 			font-size: 12px;
 		}
-		.cetak {
-			width: 19cm;
-			height: 27cm;
-			padding: 1cm;
-		}
 		table {
 			border: solid thin #000;
 			border-collapse: collapse;
@@ -39,11 +34,6 @@
 		body {
 			font-family: Arial;
 			font-size: 12px;
-		}
-		.cetak {
-			width: 19cm;
-			height: 27cm;
-			padding: 1cm;
 		}
 		table {
 			border: solid thin #000;
@@ -74,20 +64,22 @@
 		<table class="table table-bordered" width="100%">
 		<thead>
 			<tr class="bg-success">
-				<th width=5%>NO</th>
-				<th width=20%>NAMA</th>
-				<th width=20%>NIK</th>
-				<th width=20%>NOMOR TELEPON</th>
-				<th width=20%>TANGGAL KUNJUNGAN</th>
+				<th width="5%">NO</th>
+				<th width="20%">NAMA</th>
+				<th width="20%">INSTANSI</th>
+				<th width="25%">TUJUAN KUNJUNGAN</th>
+				<th width="15%">NOMOR TELEPON</th>
+				<th width="15%">TANGGAL KUNJUNGAN</th>
 			</tr>
 		</thead>
 		<tbody>
 			<?php $i=1; foreach($tamu as $tamu) { ?>
 			<tr>
 				<td> <?php echo $i ?> </td>
-				<td> <?php if(strlen($tamu->nama)>30){echo substr($tamu->nama, 0, 19)."...";}else{echo $tamu->nama;} ?></td>
-				<td> <?php echo $tamu->nik ?> </td>
-				<td> <?php if(strlen($tamu->nomor_telepon)>15){echo substr($tamu->nomor_telepon, 0, 14)."...";}else{echo $tamu->nomor_telepon;} ?> </td>
+				<td> <?php if(strlen($tamu->nama)>30){echo substr($tamu->nama, 0, 30)."...";}else{echo $tamu->nama;} ?></td>
+				<td> <?php if(strlen($tamu->instansi)>30){echo substr($tamu->instansi, 0, 30)."...";}else{echo $tamu->instansi;} ?> </td>
+				<td> <?php if(strlen($tamu->tujuan_kunjungan)>30){echo substr($tamu->tujuan_kunjungan, 0, 30)."...";}else{echo $tamu->tujuan_kunjungan;} ?> </td>
+				<td> <?php if(strlen($tamu->nomor_telepon)>15){echo substr($tamu->nomor_telepon, 0, 15)."...";}else{echo $tamu->nomor_telepon;} ?> </td>
 				<td><?php echo strftime('%e %B %Y %R', strtotime($tamu->date_created)) ?></td>
 			</tr>
 			<?php $i++; } ?>

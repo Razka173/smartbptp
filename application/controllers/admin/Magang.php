@@ -47,14 +47,15 @@ class Magang extends CI_Controller
 
     public function pdf()
     {
+        $namafile = "magang_";
         $peserta = $this->Magang_model->listingAsc();
         $data = array(  'title'         => 'Daftar Peserta PKL/Magang',
                         'peserta'       => $peserta,
                     );
         $html   = $this->load->view('admin/magang/cetak', $data, true);
-        $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4-P']);
+        $mpdf = new \Mpdf\Mpdf(['mode' => 'utf-8', 'format' => 'A4', 'orientation' => 'L']);
         $mpdf->WriteHTML($html);
-        $mpdf->Output();
+        $mpdf->Output($namafile.date("Y/m/d").'.pdf', 'I');
     }
 
     // Delete magang

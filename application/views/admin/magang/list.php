@@ -1,6 +1,6 @@
 <?php setlocale (LC_TIME, 'id_ID'); ?>
 <p>
-  <a href="<?php echo base_url('admin/magang/pdf') ?>" class="btn btn-success btn-md">
+  <a href="<?php echo base_url('admin/magang/pdf')?>" target="_blank" class="btn btn-success btn-md">
     <i class="fa fa-print"></i> Cetak PDF
   </a>
 </p>

@@ -19,9 +19,8 @@ class Bukutamu extends CI_Controller {
 		$valid->set_rules('nama','Nama','required',
 			array(	'required'		=> '%s harus diisi'));
 
-		$valid->set_rules('nik','NIK','required|min_length[16]|numeric',
-			array(	'required'		=> '%s harus diisi',
-					'min_length'	=> '%s minimal 16 angka',
+		$valid->set_rules('nik','NIK','min_length[16]|numeric',
+			array(	'min_length'	=> '%s minimal 16 angka',
 					'numeric'		=> '%s hanya boleh angka',
 				));
 
@@ -37,6 +36,8 @@ class Bukutamu extends CI_Controller {
 			// BEGIN MASUK DATABASE
 			$i = $this->input;
 			$data = array(	'nama'				=> $this->security->xss_clean($i->post('nama')),
+							'instansi'			=> $this->security->xss_clean($i->post('instansi')),
+							'tujuan_kunjungan'	=> $this->security->xss_clean($i->post('tujuan_kunjungan')),
 							'nik'				=> $this->security->xss_clean($i->post('nik')),
 							'nomor_telepon'		=> $this->security->xss_clean($i->post('nomor_telepon')),
 							);
