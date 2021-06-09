@@ -48,10 +48,10 @@
         <table class="table table-bordered">
             <thead>
             <tr>
-                <th scope="col">No.</th>
-                <th scope="col">Nama</th>
-                <th scope="col">Instansi</th>
-                <th scope="col">Waktu Pelaksanaan</th>
+                <th scope="col" width="5%">No.</th>
+                <th scope="col" width="45%">Nama</th>
+                <th scope="col" width="25%">Instansi</th>
+                <th scope="col" width="25%">Waktu Pelaksanaan</th>
             </tr>
             </thead>
             <tbody>
@@ -59,7 +59,7 @@
                 foreach ($pkl as $pkl){?>
             <tr>
                 <th scope="row"><?php echo $no ?></th>
-                <td><?php echo $pkl->nama; if($pkl->jumlah_anggota>1){echo " (kelompok)";}?></td>
+                <td><?php echo $pkl->nama; if($pkl->jumlah_anggota>1){echo " ".$pkl->nama_anggota;}?></td>
                 <td><?php echo $pkl->instansi ?></td>
                 <td><?php echo strftime('%B %Y', strtotime($pkl->tanggal_masuk)) ?></td>
             </tr>

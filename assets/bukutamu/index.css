@@ -1,16 +1,17 @@
-.btnhijau{
+.btnhijau {
     color: white;
     background-color: rgb(87, 148, 247);
 
 }
 
-.container{
+.container {
     max-width: 450px;
     border: 2px solid rgb(191, 255, 196); 
-    border-radius: 2%; 
+    border-radius: 4%; 
     background-color: rgb(255,255,255);
     padding-top: 40px;
-    width: 90%
+    width: 90%;
+    /*margin-bottom: 100px;*/
 }
 
 body { 
@@ -28,28 +29,28 @@ body {
  /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
   	.container-welcome {
-    text-align: center;
-    font-family: monospace;
-    font-size: 15px;
-    margin-top: 15px;
+        text-align: center;
+        font-family: monospace;
+        font-size: 15px;
+        margin-top: 20px;
 	}
 }
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
 	.container-welcome {
-    text-align: center;
-    font-family: monospace;
-    font-size: 15px;
+        text-align: center;
+        font-family: monospace;
+        font-size: 15px;
 	}
 }
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
 	.container-welcome {
-    text-align: center;
-    font-family: monospace;
-    margin-top: 5%;
+        text-align: center;
+        font-family: monospace;
+        margin-top: 4%;
 	}
 }
 

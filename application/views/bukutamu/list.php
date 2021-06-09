@@ -34,7 +34,6 @@
 
     <div class="container">
         <div class="row justify-content-center">
-            <!-- <div class="col-md-1 col-md-offset-2"></div> -->
             <div class="col-10 col-sm-10 col-md-10 col-lg-10 text-center">
 
 <?php  
@@ -58,7 +57,7 @@ echo form_open_multipart(base_url('bukutamu'),' class="form-horizontal"');
                     </div>
 
                     <div class="mb-1">
-                        <input type="text" placeholder="Tujuan Kunjungan" class="form-control" id="tujuan_kunjungan" name="tujuan_kunjungan" value="<?php echo set_value('tujuan')?>" required>
+                        <input type="text" placeholder="Tujuan Kunjungan" class="form-control" id="tujuan_kunjungan" name="tujuan_kunjungan" value="<?php echo set_value('tujuan_kunjungan')?>" required>
                     </div>
                     
                     <div class="mb-1">
@@ -71,7 +70,7 @@ echo form_open_multipart(base_url('bukutamu'),' class="form-horizontal"');
 
                     <div class="mb-2 mt-2">
                         <div class="mb-1"><?php echo $captcha['image'] ?>
-                        <input type="text" class="form-control" placeholder="Security Code" name="captcha" id="captcha" value="" required>
+                        <input type="text" class="form-control" placeholder="Security Code" name="captcha" id="captcha" required>
                     </div>
                     <button type="submit" name="submit" class="btn btnhijau col-6">Submit</button>
 <?php 
