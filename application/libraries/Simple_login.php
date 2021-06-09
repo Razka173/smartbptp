@@ -26,6 +26,7 @@ class Simple_login
 			$this->CI->session->set_userdata('nama',$nama);
 			$this->CI->session->set_userdata('username',$username);
 			$this->CI->session->set_userdata('akses_level','admin');
+			$this->CI->session->set_userdata('attempt', 0);
 			// Update last login
 			$data = array(	'id_user'		=> $id_user,
 							'last_login'	=> date('Y-m-d H:i:s'),
@@ -35,6 +36,11 @@ class Simple_login
 			redirect(base_url('admin/dasbor'),'refresh');
 		}else{
 			// Kalau tidak ada (username password salah), maka suruh login lagi
+			// Kalau salah login 3 kali, generate captcha
+			$attempt = $this->CI->session->userdata('attempt');
+			$attempt++;
+            $this->CI->session->set_userdata('attempt', $attempt);
+
 			$this->CI->session->set_flashdata('warning', 'Username atau password salah');
 			redirect(base_url('login'),'refresh');
 		}
