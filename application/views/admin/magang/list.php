@@ -5,7 +5,19 @@
   </a>
 </p>
 
-<h2>Total Peserta Magang/PKL: <?= count($peserta); ?> Peserta</h2>
+<?php 
+// Notifikasi
+if($this->session->flashdata('sukses')){
+  echo '<p class="alert alert-success">';
+  echo $this->session->flashdata('sukses');
+}
+if($this->session->flashdata('warning')){
+  echo '<p class="alert alert-warning">';
+  echo $this->session->flashdata('warning');
+}
+?>
+
+<h2>Total Data Magang/PKL: <?= count($peserta); ?> Data</h2>
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
         <tr>

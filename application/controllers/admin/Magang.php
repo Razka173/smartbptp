@@ -63,7 +63,7 @@ class Magang extends CI_Controller
     {
         // Proses hapus gambar
         $magang = $this->Magang_model->detail($id_peserta);
-        unlink('./assets/upload/pkl/'.$magang->dokumen);
+        @unlink('./assets/upload/pkl/'.$magang->dokumen);
         // End proses hapus
         $data = array('id_peserta'   => $id_peserta);
         $this->Magang_model->delete($data);

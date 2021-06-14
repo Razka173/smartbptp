@@ -9,13 +9,13 @@
 echo validation_errors('<div class="alert alert-warning">','</div>');
 
 // Form open
-echo form_open(base_url('admin/user/edit_profile/').$this->session->userdata('id_user'), 'class="form-horizontal"');
+echo form_open(base_url('admin/qr/tambah'), 'class="form-horizontal"');
 ?>
 
 <div class="form-inline">
-	<label class="col-md-2 control-label" for="nama">Nama Profile</label>
+	<label class="col-md-2 control-label" for="data">Text QR</label>
 	<div class="col-md-5">
-		<input type="text" name="nama" id="nama" class="form-control" placeholder="Nama" value="<?php echo $user->nama ?>" required>
+		<input type="text" name="data" id="data" class="form-control" placeholder="Isi Text QR..." value="<?php echo set_value('data') ?>" required>
 	</div>
 </div>
 

@@ -1,5 +1,5 @@
 <p>
-	<a href="<?php echo base_url('admin/user') ?>" title="kembali" class="btn btn-info btn-md">
+	<a href="<?php echo $this->agent->referrer(); ?>" class="btn btn-info btn-md">
 		<i class="fa fa-backward"></i> Kembali
 	</a>
 </p>

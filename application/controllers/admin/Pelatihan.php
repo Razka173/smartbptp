@@ -63,7 +63,7 @@ class Pelatihan extends CI_Controller
     {
         // Proses hapus gambar
         $pelatihan = $this->Pelatihan_model->detail($id_pelatihan);
-        unlink('./assets/upload/pelatihan/'.$pelatihan->dokumen);
+        @unlink('./assets/upload/pelatihan/'.$pelatihan->dokumen);
         // End proses hapus
         $data = array('id_pelatihan'   => $id_pelatihan);
         $this->Pelatihan_model->delete($data);

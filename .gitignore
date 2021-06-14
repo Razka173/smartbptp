@@ -32,7 +32,11 @@ user_guide_src/cilexer/pycilexer.egg-info/*
 
 captcha/*.jpg
 captcha/*.jpeg
-captcha/*.pnh
+captcha/*.png
+
+assets/qrcode/images/*.jpg
+assets/qrcode/images/*.jpeg
+assets/qrcode/images/*.png
 
 assets/upload/pelatihan/*.jpg
 assets/upload/pelatihan/*.png

@@ -1,19 +1,19 @@
 <p>
-		<a href="<?php echo base_url('admin/user') ?>" title="kembali" class="btn btn-info btn-md">
-			<i class="fa fa-backward"></i> Kembali
-		</a>
-		<a href="<?php echo base_url('admin/user/edit_profile/').$this->session->userdata('id_user') ?>" class="btn btn-warning btn-md">
-    		<i class="fa fa-edit"></i> Edit Profile
-  		</a>
-		<a href="<?php echo base_url('admin/user/edit_email/').$this->session->userdata('id_user') ?>" class="btn btn-warning btn-md">
-			<i class="fa fa-edit"></i> Edit Email
-		</a>
-		<a href="<?php echo base_url('admin/user/edit_username/').$this->session->userdata('id_user') ?>" class="btn btn-warning btn-md">
-    		<i class="fa fa-edit"></i> Edit Username
-  		</a>
-  		<a href="<?php echo base_url('admin/user/ganti_password/').$this->session->userdata('id_user') ?>" class="btn btn-danger btn-md">
-    		<i class="fa fa-edit"></i> Ganti Password
-  		</a>
+	<a href="<?php echo $this->agent->referrer(); ?>" class="btn btn-info btn-md">
+		<i class="fa fa-backward"></i> Kembali
+	</a>
+	<a href="<?php echo base_url('admin/user/edit_profile/').$this->session->userdata('id_user') ?>" class="btn btn-warning btn-md">
+    	<i class="fa fa-edit"></i> Edit Profile
+  	</a>
+	<a href="<?php echo base_url('admin/user/edit_email/').$this->session->userdata('id_user') ?>" class="btn btn-warning btn-md">
+		<i class="fa fa-edit"></i> Edit Email
+	</a>
+	<a href="<?php echo base_url('admin/user/edit_username/').$this->session->userdata('id_user') ?>" class="btn btn-warning btn-md">
+    	<i class="fa fa-edit"></i> Edit Username
+  	</a>
+  	<a href="<?php echo base_url('admin/user/ganti_password/').$this->session->userdata('id_user') ?>" class="btn btn-danger btn-md">
+    	<i class="fa fa-edit"></i> Ganti Password
+  	</a>
 </p>
 
 <div class="clearfix"></div><hr>

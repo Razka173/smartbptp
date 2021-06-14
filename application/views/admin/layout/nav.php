@@ -35,7 +35,7 @@
           <span>PKL/Magang</span></a>
       </li>
 
-      <!-- MENU PELATIHAN TEKNOLOGIN -->
+      <!-- MENU PELATIHAN TEKNOLOGI -->
       <li class="nav-item <?php if(strpos(strtolower($title),'pelatihan')){echo 'active';} ?>">
         <a class="nav-link" href="<?php echo base_url('admin/pelatihan') ?>">
           <i class="fas fa-fw fa-users"></i>
@@ -55,6 +55,13 @@
             <a class="collapse-item" href="<?php echo base_url('admin/user/tambah') ?>"><i class="fas fa-fw fa-plus"></i> Tambah Admin</a>
           </div>
         </div>
+      </li>
+
+      <!-- MENU QR-CODE -->
+      <li class="nav-item <?php if(strpos(strtolower($title),'qr')){echo 'active';} ?>">
+        <a class="nav-link" href="<?php echo base_url('admin/qr') ?>">
+          <i class="fas fa-fw fa-cog"></i>
+          <span>QR Code</span></a>
       </li>
 
       <!-- Divider -->

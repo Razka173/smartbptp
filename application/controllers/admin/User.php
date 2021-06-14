@@ -24,7 +24,7 @@ class User extends CI_Controller
         $this->load->view('admin/layout/wrapper', $data, FALSE);
     }
 
-    // Tambah admin
+    // Tambah data
     public function tambah()
     {
         // Validasi input
