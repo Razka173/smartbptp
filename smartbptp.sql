@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 04 Jun 2021 pada 04.35
+-- Waktu pembuatan: 15 Jun 2021 pada 03.15
 -- Versi server: 10.1.36-MariaDB
 -- Versi PHP: 7.2.10
 
@@ -31,23 +31,12 @@ SET time_zone = "+00:00";
 CREATE TABLE `bukutamu` (
   `id_bukutamu` int(11) NOT NULL,
   `nama` varchar(255) NOT NULL,
-  `nik` varchar(255) NOT NULL,
+  `nik` varchar(255) DEFAULT NULL,
+  `instansi` varchar(255) DEFAULT NULL,
   `nomor_telepon` varchar(255) DEFAULT NULL,
+  `tujuan_kunjungan` varchar(255) DEFAULT NULL,
   `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
--- --------------------------------------------------------
-
---
--- Struktur dari tabel `captcha`
---
-
-CREATE TABLE `captcha` (
-  `captcha_id` bigint(13) UNSIGNED NOT NULL,
-  `captcha_time` int(10) UNSIGNED NOT NULL,
-  `ip_address` varchar(45) NOT NULL,
-  `word` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -100,14 +89,13 @@ CREATE TABLE `peserta` (
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `surat`
+-- Struktur dari tabel `qrcode`
 --
 
-CREATE TABLE `surat` (
-  `id_surat` int(11) NOT NULL,
-  `id_peserta` int(11) NOT NULL,
-  `nama_surat` varchar(255) NOT NULL,
-  `keterangan` varchar(255) DEFAULT NULL,
+CREATE TABLE `qrcode` (
+  `id_qrcode` int(11) NOT NULL,
+  `data` varchar(255) NOT NULL,
+  `gambar` varchar(255) NOT NULL,
   `date_created` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `date_updated` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -134,7 +122,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `nama`, `email`, `username`, `password`, `last_login`, `date_created`, `date_updated`) VALUES
-(1, 'Admin Smart BPTP', 'smartbptpadmin@gmail.com', 'smartbptp1', '714744fd848ffe6d22c0462537fdf6cb903eec8a', '2021-06-03 18:45:31', '2021-06-03 21:20:06', '2021-06-03 21:20:06');
+(1, 'Admin Smart BPTP', 'smartbptpadmin@gmail.com', 'smartbptp', 'ed813787a911e7188845d8ee891bc3ced9717af6', '2021-06-14 16:37:08', '2021-06-14 16:40:39', '2021-06-14 16:40:39');
 
 --
 -- Indexes for dumped tables
@@ -145,13 +133,6 @@ INSERT INTO `users` (`id_user`, `nama`, `email`, `username`, `password`, `last_l
 --
 ALTER TABLE `bukutamu`
   ADD PRIMARY KEY (`id_bukutamu`);
-
---
--- Indeks untuk tabel `captcha`
---
-ALTER TABLE `captcha`
-  ADD PRIMARY KEY (`captcha_id`),
-  ADD KEY `word` (`word`);
 
 --
 -- Indeks untuk tabel `pelatihan`
@@ -166,10 +147,10 @@ ALTER TABLE `peserta`
   ADD PRIMARY KEY (`id_peserta`);
 
 --
--- Indeks untuk tabel `surat`
+-- Indeks untuk tabel `qrcode`
 --
-ALTER TABLE `surat`
-  ADD PRIMARY KEY (`id_surat`);
+ALTER TABLE `qrcode`
+  ADD PRIMARY KEY (`id_qrcode`);
 
 --
 -- Indeks untuk tabel `users`
@@ -189,12 +170,6 @@ ALTER TABLE `bukutamu`
   MODIFY `id_bukutamu` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `captcha`
---
-ALTER TABLE `captcha`
-  MODIFY `captcha_id` bigint(13) UNSIGNED NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT untuk tabel `pelatihan`
 --
 ALTER TABLE `pelatihan`
@@ -207,10 +182,10 @@ ALTER TABLE `peserta`
   MODIFY `id_peserta` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT untuk tabel `surat`
+-- AUTO_INCREMENT untuk tabel `qrcode`
 --
-ALTER TABLE `surat`
-  MODIFY `id_surat` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `qrcode`
+  MODIFY `id_qrcode` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT untuk tabel `users`
