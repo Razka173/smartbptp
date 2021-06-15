@@ -8,7 +8,9 @@ class Pelatihan extends CI_Controller {
         // Construct the parent class
         parent::__construct();
         $this->load->model('Pelatihan_model');
+        $this->load->model('Admin_model');
         $this->load->helper('captcha');
+        $this->load->library('email');
     }
 
 	// Daftar Pkl
@@ -20,9 +22,6 @@ class Pelatihan extends CI_Controller {
 			array(	'required'		=> '%s harus diisi'));
 
 		$valid->set_rules('instansi','Instansi','required',
-			array(	'required'		=> '%s harus diisi'));
-
-		$valid->set_rules('nomor_induk','Nomor Induk','required',
 			array(	'required'		=> '%s harus diisi'));
 
 		$valid->set_rules('alamat','Alamat','required',
@@ -69,15 +68,25 @@ class Pelatihan extends CI_Controller {
 				$upload_data = array('upload_data' => $this->upload->data());
 
 				$i = $this->input;
-				if(empty($i->post('tujuan_kunjungan'))){
-					$tujuan_kunjungan = "Lainnya: ".$i->post('yglainnya');
+				if($i->post('tujuan_kunjungan')=='Lainnya'){
+					if(!empty($i->post('isi_lainnya'))){
+						$tujuan_kunjungan = "Lainnya: ".$i->post('isi_lainnya');
+					}else{
+						$tujuan_kunjungan = "Lainnya";
+					}
+				}
+				if($i->post('tujuan_kunjungan')=='Pelatihan'){
+					if(!empty($i->post('isi_pelatihan'))){
+						$tujuan_kunjungan = "Pelatihan: ".$i->post('isi_pelatihan');
+					}else{
+						$tujuan_kunjungan = "Pelatihan Lainnya";
+					}
 				}else{
 					$tujuan_kunjungan = $i->post('tujuan_kunjungan');
 				}
 
 				$data = array(	'nama'				=> $i->post('nama'),
 								'instansi'			=> $i->post('instansi'),
-								'nomor_induk'		=> $i->post('nomor_induk'),
 								'alamat'			=> $i->post('alamat'),
 								'nomor_telepon'		=> $i->post('nomor_telepon'),
 								'email'				=> $i->post('email'),
@@ -86,6 +95,31 @@ class Pelatihan extends CI_Controller {
 								'dokumen'			=> $upload_data['upload_data']['file_name'],
 							);
 				$this->Pelatihan_model->tambah($data);
+
+				$admin = $this->Admin_model->listing();
+				$emails = array();
+				foreach ($admin as $admin){
+					$email = $admin->email;
+					array_push($emails, $email);					
+				}
+				$subject_admin = "[No-Reply] Pelatihan Teknologi BPTP Jakarta";
+				$message_admin = "Hai Admin, ada yang mendaftar Pelatihan Teknologi";
+				$kirim_email_admin = $this->kirim_email($emails, $subject_admin, $message_admin);
+
+				$to = $i->post('email');
+				$subject = "[No-Reply] Pelatihan Teknologi BPTP Jakarta";
+				$message = "Terimakasih sudah mendaftar";
+				$kirim_email = $this->kirim_email($to, $subject, $message);
+			
+				// KIRIM EMAIL
+		    	if ($kirim_email){
+		    		$this->session->set_flashdata('sukses', 'Anda telah terdaftar');
+					redirect(base_url('pelatihan/terimakasih'),'refresh');
+		    	}else{
+		    		$this->session->set_flashdata('sukses', 'Anda telah terdaftar');
+					redirect(base_url('pelatihan/terimakasih'),'refresh');
+		   		}
+
 				$this->session->set_flashdata('sukses', 'Anda telah terdaftar');
 				redirect(base_url('pelatihan/terimakasih'),'refresh');
 				// END MASUK DATABASE	
@@ -156,6 +190,43 @@ class Pelatihan extends CI_Controller {
 			return false;
 		}
 	}
+
+	// Kirim Email
+	private function kirim_email($to, $subject, $message)
+	{
+		// Verifikasi Email Pelanggan
+		$this->load->library('email');
+
+	    $config = array();
+	    $config['smtp_host']	= "ssl://smtp.gmail.com";; // Pengaturan SMTP
+	    $config['smtp_user']	= "smartbptp@gmail.com"; // isi dengan email
+	    $config['smtp_pass']	= "developersmartbptp"; // isi dengan password
+	    $config['charset'] 		= 'utf-8';
+	    $config['useragent'] 	= 'Codeigniter';
+	    $config['protocol']		= "smtp";
+	    $config['mailtype']		= "html";
+	    $config['smtp_port']	= "465";
+	    $config['smtp_timeout']	= "400";
+	    $config['crlf']			= "\r\n"; 
+	    $config['newline']		= "\r\n"; 
+	    $config['wordwrap'] 	= TRUE;
+	    // memanggil library email dan set konfigurasi untuk pengiriman email
+	   
+	    $this->email->initialize($config);
+	    //konfigurasi pengiriman
+	    $this->email->from($config['smtp_user']);
+	    $this->email->to($to);
+	    $this->email->subject($subject);
+	    $this->email->message($message);
+	    if($this->email->send()){
+	    	return true;
+	    }else{
+	    	echo $this->email->print_debugger();
+	    	die;
+	    }
+	    return $this->email->send();
+	}
+
 }
 
 /* End of file Pelatihan.php */
