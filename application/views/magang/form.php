@@ -117,41 +117,41 @@ echo form_open_multipart(base_url('magang/daftar'),' class="form-horizontal"');
                     <div class="mb-3">
                         <label class="form-label">Bidang Materi<label style="color: red;">*</label></label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="materi" id="budidaya" value="Budidaya" checked>
+                            <input class="form-check-input" type="radio" name="materi" id="budidaya" value="Budidaya" checked onclick="javascript:yesnoCheck();">
                             <label class="form-check-label" for="budidaya">
                                 Budidaya
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="materi" id="pascapanen" value="Pasca Panen">
+                            <input class="form-check-input" type="radio" name="materi" id="pascapanen" value="Pasca Panen" onclick="javascript:yesnoCheck();">
                             <label class="form-check-label" for="pascapanen">
                                 Pasca Panen
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="materi" id="peternakan" value="Peternakan">
+                            <input class="form-check-input" type="radio" name="materi" id="peternakan" value="Peternakan" onclick="javascript:yesnoCheck();">
                             <label class="form-check-label" for="peternakan">
                                 Peternakan
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="materi" id="sosekonomi" value="Sosial Ekonomi">
+                            <input class="form-check-input" type="radio" name="materi" id="sosekonomi" value="Sosial Ekonomi" onclick="javascript:yesnoCheck();">
                             <label class="form-check-label" for="sosekonomi">
                                 Sosial Ekonomi
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="materi" id="smk" value="SMA/SMK">
+                            <input class="form-check-input" type="radio" name="materi" id="smk" value="SMA/SMK" onclick="javascript:yesnoCheck();">
                             <label class="form-check-label" for="smk">
                                 SMA/SMK
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="materi" id="other" value="">
-                            <label class="form-check-label" for="other">
+                            <input class="form-check-input" type="radio" name="materi" id="lainnya" value="Lainnya" onclick="javascript:yesnoCheck();">
+                            <label class="form-check-label" for="lainnya">
                                 Yang Lainnya...
                             </label>
-                            <input type="text" class="form-control" id="other" name="other">
+                            <input type="text" class="form-control" id="isi_lainnya" name="isi_lainnya" placeholder="Isi materi magang/PKL yang anda inginkan disini." style="display: none">
                         </div>
                         <div class="col-md-3">
                             
@@ -160,7 +160,7 @@ echo form_open_multipart(base_url('magang/daftar'),' class="form-horizontal"');
 
                     <div class="mb-3">
                         <label for="" >Jumlah Peserta</label></label>
-                        <select class="form-select" id="jumlah_anggota" name="jumlah_anggota">
+                        <select class="form-select" id="jumlah_anggota" name="jumlah_anggota" onchange="showDiv()">
                           <option value="1">1 Orang</option>
                           <option value="2">2 Orang</option>
                           <option value="3">3 Orang</option>
@@ -171,8 +171,8 @@ echo form_open_multipart(base_url('magang/daftar'),' class="form-horizontal"');
                         <div id="anggotaHelp" class="form-text">Catatan : Isi jumlah seluruh peserta.</div>
                     </div>
 
-                    <div class="mb-3">
-                        <label for="nama_anggota" class="form-label">Nama Anggota Lainnya <i>(optional)</i></label>
+                    <div class="mb-3" style="display: none;" id="hidden_div">
+                        <label for="nama_anggota" class="form-label">Nama Anggota Lainnya</label>
                         <input type="text" class="form-control" id="nama_anggota" name="nama_anggota" aria-describedby="anggotaHelp" value="<?php echo set_value('nama_anggota')?>">
                         <div id="anggotaHelp" class="form-text">Contoh : Ivan Adi Putra, Razka Agniatara, Adini Gufroni</div>
                     </div>
@@ -206,6 +206,34 @@ echo form_close();
     </script>
 
     <script src="<?php echo base_url() ?>assets/magang/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+        function yesnoCheck() {
+            if (document.getElementById('lainnya').checked) {
+                document.getElementById('isi_lainnya').style.display = 'block';
+                document.getElementById("isi_lainnya").required = true;
+            } else {
+                document.getElementById('isi_lainnya').style.display = 'none';
+                document.getElementById('isi_lainnya').value = '';
+                document.getElementById("isi_lainnya").removeAttribute("required");
+            }
+        }
+
+        // function showDiv(divId, element){
+        //     document.getElementById(divId).style.display = element.value != 1 ? 'block' : 'none';
+        // }
+
+        function showDiv(){
+            if(document.getElementById('jumlah_anggota').value != 1) {
+                document.getElementById('hidden_div').style.display = 'block';
+                document.getElementById('nama_anggota').required = true;
+            } else {
+                document.getElementById('hidden_div').style.display = 'none';
+                document.getElementById('nama_anggota').value = '';
+                document.getElementById("nama_anggota").removeAttribute("required");
+            }
+        }
+    </script>
    
   </body>
 </html>

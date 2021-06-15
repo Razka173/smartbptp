@@ -96,11 +96,16 @@ class Magang extends CI_Controller {
 				$upload_data = array('upload_data' => $this->upload->data());
 
 				$i = $this->input;
-				if(empty($i->post('materi'))){
-					$materi = "Lainnya: ".$i->post('other');
+				if($i->post('materi')=='Lainnya'){
+					if(!empty($i->post('isi_lainnya'))){
+						$materi = "Lainnya: ".$i->post('isi_lainnya');
+					}else{
+						$materi = "Lainnya";
+					}
 				}else{
 					$materi = $i->post('materi');
 				}
+				
 				if($i->post('jumlah_anggota')=='1'){
 					$nama_anggota = NULL;
 				}else{
