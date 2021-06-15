@@ -30,7 +30,7 @@
             <div class="col-md-8">
                 <img src="<?php echo base_url() ?>assets/smartbptp/img/logobptp.png" alt="" style="height: 200px;">
         
-                <h1 style="color: rgb(17, 214, 70);">Formulir Pengajuan Studi Banding, Kunjungan Edukatif, Pelatihan Teknologi Pertanian Perkotaan</h1>
+                <h1 style="color: rgb(17, 214, 70);">Formulir Pendaftaran Studi Banding, Kunjungan Edukatif, Pelatihan Teknologi Pertanian Perkotaan</h1>
                 
                 <br>
 
