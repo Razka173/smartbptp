@@ -30,7 +30,7 @@
             <div class="col-md-8">
                 <img src="<?php echo base_url() ?>assets/smartbptp/img/logobptp.png" alt="" style="height: 200px;">
         
-                <h1 style="color: rgb(17, 214, 70);">Formulir Pengajuan Magang/PKL </h1>
+                <h1 style="color: rgb(17, 214, 70);">Formulir Pendaftaran PKL/Magang/Penelitian </h1>
                 <h1 style="color: rgb(17, 214, 70);">Balai Pengkajian Teknologi Pertanian Jakarta</h1>
                 
                 <br>
