@@ -125,7 +125,7 @@ class Magang extends CI_Controller {
 					$email = $admin->email;
 					array_push($emails, $email);					
 				}
-				$waktu = strftime('%B %Y', strtotime($i->post('year').$i->post('month')));
+				$waktu = strftime('%B %Y', strtotime($i->post('year').$i->post('month').'01'));
 				$subject_admin = "[No-Reply] Magang/PKL BPTP Jakarta";
 				$message_admin = "Hai Admin, ada yang mendaftar Magang/PKL!<br>"."Nama: ".$i->post('nama')."<br>"."Instansi: ".$i->post('instansi')."<br>"."Alamat: ".$i->post('alamat')."<br>"."Nomor Telepon: ".$i->post('nomor_telepon')."<br>"."Email: ".$i->post('email')."<br>"."Bulan Magang: ".$waktu."<br>"."Materi: ".$materi."<br><br><a href='".base_url('admin/dasbor')."' class='btn btn-info btn-xs'>Link Halaman Admin SMART BPTP</a>";
 				$kirim_email_admin = $this->kirim_email($emails, $subject_admin, $message_admin);
