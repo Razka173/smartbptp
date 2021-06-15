@@ -81,9 +81,13 @@ class Magang extends CI_Controller {
 			// END VALIDASI
 			
 			if (!$this->upload->do_upload('dokumen')){
+				$captcha = $this->set_captcha();
+				$this->session->set_userdata('captchaword', $captcha['word']);
+
 				$data = array(	'title' 	=> 'Pendaftaran PKL/Magang',
 								'error'		=> $this->upload->display_errors(),
-								'isi'		=> 'pkl/form',
+								'captcha'	=> $captcha,
+								'isi'		=> 'magang/form',
 							);
 				$this->load->view('magang/form', $data, FALSE);
 

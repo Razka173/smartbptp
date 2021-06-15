@@ -57,8 +57,12 @@ class Pelatihan extends CI_Controller {
 			// END VALIDASI
 			
 			if (!$this->upload->do_upload('dokumen')){
+				$captcha = $this->set_captcha();
+				$this->session->set_userdata('captchaword', $captcha['word']);
+				
 				$data = array(	'title' 	=> 'Pendaftaran Pelatihan Teknologi',
 								'error'		=> $this->upload->display_errors(),
+								'captcha'	=> $captcha,
 								'isi'		=> 'pelatihan/form',
 							);
 				$this->load->view('pelatihan/form', $data, FALSE);

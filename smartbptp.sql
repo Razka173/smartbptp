@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Jun 2021 pada 13.42
+-- Waktu pembuatan: 15 Jun 2021 pada 17.32
 -- Versi server: 10.1.36-MariaDB
 -- Versi PHP: 7.2.10
 
@@ -121,7 +121,9 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `nama`, `email`, `username`, `password`, `last_login`, `date_created`, `date_updated`) VALUES
-(1, 'Admin Smart BPTP', 'smartbptpadmin@gmail.com', 'smartbptp', 'ed813787a911e7188845d8ee891bc3ced9717af6', '2021-06-14 20:47:15', '2021-06-14 20:47:15', '2021-06-14 20:47:15');
+(1, 'Admin Smart BPTP', 'smartbptp@gmail.com', 'superadmin', 'ed813787a911e7188845d8ee891bc3ced9717af6', '2021-06-15 08:08:13', '2021-06-15 10:22:56', '2021-06-15 10:22:56'),
+(2, 'Donyy', 'donie_don2@yahoo.com', 'donnybptp', '17cbac7a5a62f32e49b118007bda0036d1f0874c', NULL, '2021-06-15 10:31:31', '2021-06-15 10:31:31'),
+(3, 'Karno', 'kaheriswanto@gmail.com', 'karnobptp', '17cbac7a5a62f32e49b118007bda0036d1f0874c', NULL, '2021-06-15 10:31:52', '2021-06-15 10:31:52');
 
 --
 -- Indexes for dumped tables
@@ -190,7 +192,7 @@ ALTER TABLE `qrcode`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
