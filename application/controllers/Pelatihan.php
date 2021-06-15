@@ -110,7 +110,7 @@ class Pelatihan extends CI_Controller {
 
 				$to = $i->post('email');
 				$subject = "[No-Reply] Pelatihan Teknologi BPTP Jakarta";
-				$message = "Terimakasih sudah mendaftar";
+				$message = "Terimakasih sudah mendaftar! Kami akan segera menghubungi Anda.";
 				$kirim_email = $this->kirim_email($to, $subject, $message);
 				// END KIRIM EMAIL
 			

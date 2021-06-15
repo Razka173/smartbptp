@@ -132,7 +132,7 @@ class Magang extends CI_Controller {
 
 				$to = $i->post('email');
 				$subject = "[No-Reply] Magang/PKL BPTP Jakarta";
-				$message = "Terimakasih sudah mendaftar! Dimohon segera konfirmasi ke kantor BPTP Jakarta di hari kerja";
+				$message = "Terima kasih sudah mendaftar! Dimohon segera konfirmasi ke kantor BPTP Jakarta di hari kerja.";
 				$kirim_email = $this->kirim_email($to, $subject, $message);
 				// END KIRIM EMAIL
 
