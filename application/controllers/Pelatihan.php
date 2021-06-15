@@ -48,7 +48,6 @@ class Pelatihan extends CI_Controller {
 				redirect(base_url('pelatihan/daftar'),'refresh');
 			}
 
-
 			$nama = $this->input->post('nama');
 			$nama_file = strtolower(str_replace(' ', '', $nama));
 			$config['file_name']		= $nama_file;
@@ -70,6 +69,12 @@ class Pelatihan extends CI_Controller {
 				$upload_data = array('upload_data' => $this->upload->data());
 
 				$i = $this->input;
+				if(empty($i->post('tujuan_kunjungan'))){
+					$tujuan_kunjungan = "Lainnya: ".$i->post('yglainnya');
+				}else{
+					$tujuan_kunjungan = $i->post('tujuan_kunjungan');
+				}
+
 				$data = array(	'nama'				=> $i->post('nama'),
 								'instansi'			=> $i->post('instansi'),
 								'nomor_induk'		=> $i->post('nomor_induk'),
@@ -77,7 +82,7 @@ class Pelatihan extends CI_Controller {
 								'nomor_telepon'		=> $i->post('nomor_telepon'),
 								'email'				=> $i->post('email'),
 								'tanggal_kunjungan'	=> $i->post('tanggal_kunjungan'),
-								'tujuan_kunjungan'	=> $i->post('tujuan_kunjungan'),
+								'tujuan_kunjungan'	=> $tujuan_kunjungan,
 								'dokumen'			=> $upload_data['upload_data']['file_name'],
 							);
 				$this->Pelatihan_model->tambah($data);

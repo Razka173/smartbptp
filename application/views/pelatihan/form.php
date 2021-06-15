@@ -65,28 +65,28 @@ echo form_open_multipart(base_url('pelatihan/daftar'),' class="form-horizontal"'
 
                     <div class="mb-3">
                         <label for="nama" class="form-label">Nama<label style="color: red;">*</label></label>
-                        <input type="text" class="form-control" id="nama" name="nama" required>
+                        <input type="text" class="form-control" id="nama" name="nama" value="<?php echo set_value('nama')?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="asalinstansi" class="form-label">Asal Instansi/Sekolah/Perguruan Tinggi<label style="color: red;">*</label></label>
-                        <input type="text" class="form-control" id="instansi" name="instansi" required>
+                        <input type="text" class="form-control" id="instansi" name="instansi" value="<?php echo set_value('instansi')?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="noinduk" class="form-label">Nomor Induk<label style="color: red;">*</label></label>
-                        <input type="text" class="form-control" id="nomor_induk" name="nomor_induk" required>
+                        <input type="text" class="form-control" id="nomor_induk" name="nomor_induk" value="<?php echo set_value('nomor_induk')?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="alamat" class="form-label">Alamat<label style="color: red;">*</label></label>
-                        <input type="text" class="form-control" id="alamat" name="alamat" required>
+                        <input type="text" class="form-control" id="alamat" name="alamat" value="<?php echo set_value('alamat')?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="nomor_telepon" class="form-label">Nomor Telepon<label style="color: red;">*</label></label>
-                        <input type="number" class="form-control" id="nomor_telepon" name="nomor_telepon" required>
+                        <input type="number" class="form-control" id="nomor_telepon" name="nomor_telepon" value="<?php echo set_value('nomor_telepon')?>" required>
                         <div id="numberHelp" class="form-text">We'll never share your phone number with anyone else.</div>
                     </div>
                     <div class="mb-3">
                         <label for="email" class="form-label">Email Address<label style="color: red;">*</label></label>
-                        <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" required>
+                        <input type="email" class="form-control" id="email" name="email" value="<?php echo set_value('email')?>" aria-describedby="emailHelp" required>
                         <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                     </div>
                     <div class="mb-3">

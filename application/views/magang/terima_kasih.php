@@ -21,12 +21,13 @@
 <body>
 
 <?php 
-header("Refresh:5; url={$url}");
+header("Refresh:10; url={$url}");
 ?>
 <div class="row h-100">
 	<div class="col-sm-12 my-auto">
 		<div class="jumbotron text-center">
-			<h1 class="display-3">Terima kasih sudah mendaftar!</h1>
+			<h2 class="display-3">Terima kasih sudah mendaftar!</h2>
+            <p>Dimohon segera konfirmasi ke kantor BPTP Jakarta di hari kerja</p>
 		</div>
 	</div>
 </div>

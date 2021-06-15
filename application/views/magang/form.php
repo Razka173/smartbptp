@@ -159,7 +159,7 @@ echo form_open_multipart(base_url('magang/daftar'),' class="form-horizontal"');
                     </div>
 
                     <div class="mb-3">
-                        <label for="" >Jumlah Anggota</label></label>
+                        <label for="" >Jumlah Peserta</label></label>
                         <select class="form-select" id="jumlah_anggota" name="jumlah_anggota">
                           <option value="1">1 Orang</option>
                           <option value="2">2 Orang</option>
@@ -168,10 +168,11 @@ echo form_open_multipart(base_url('magang/daftar'),' class="form-horizontal"');
                           <option value="5">5 Orang</option>
                           <option value="6">6 Orang</option>
                         </select>
+                        <div id="anggotaHelp" class="form-text">Catatan : Isi jumlah seluruh peserta.</div>
                     </div>
 
                     <div class="mb-3">
-                        <label for="nama_anggota" class="form-label">Nama Anggota <i>(optional)</i></label>
+                        <label for="nama_anggota" class="form-label">Nama Anggota Lainnya <i>(optional)</i></label>
                         <input type="text" class="form-control" id="nama_anggota" name="nama_anggota" aria-describedby="anggotaHelp" value="<?php echo set_value('nama_anggota')?>">
                         <div id="anggotaHelp" class="form-text">Contoh : Ivan Adi Putra, Razka Agniatara, Adini Gufroni</div>
                     </div>

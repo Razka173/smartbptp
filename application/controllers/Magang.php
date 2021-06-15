@@ -96,6 +96,11 @@ class Magang extends CI_Controller {
 				}else{
 					$materi = $i->post('materi');
 				}
+				if($i->post('jumlah_anggota')=='1'){
+					$nama_anggota = NULL;
+				}else{
+					$nama_anggota = $i->post('nama_anggota');
+				}
 				$data = array(	'nama'				=> $i->post('nama'),
 								'instansi'			=> $i->post('instansi'),
 								'nomor_induk'		=> $i->post('nomor_induk'),
@@ -105,6 +110,7 @@ class Magang extends CI_Controller {
 								'tanggal_masuk'		=> $i->post('year').$i->post('month').'01',
 								'materi'			=> $materi,
 								'jumlah_anggota'	=> $i->post('jumlah_anggota'),
+								'nama_anggota'		=> $nama_anggota,
 								'dokumen'			=> $upload_data['upload_data']['file_name'],
 								'status'			=> "Diterima",
 							);
