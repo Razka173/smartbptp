@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 15 Jun 2021 pada 03.15
+-- Waktu pembuatan: 15 Jun 2021 pada 13.42
 -- Versi server: 10.1.36-MariaDB
 -- Versi PHP: 7.2.10
 
@@ -49,7 +49,6 @@ CREATE TABLE `pelatihan` (
   `id_pelatihan` int(11) NOT NULL,
   `nama` varchar(255) NOT NULL,
   `instansi` varchar(255) NOT NULL,
-  `nomor_induk` varchar(255) NOT NULL,
   `alamat` varchar(255) DEFAULT NULL,
   `nomor_telepon` varchar(255) DEFAULT NULL,
   `email` varchar(255) NOT NULL,
@@ -122,7 +121,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id_user`, `nama`, `email`, `username`, `password`, `last_login`, `date_created`, `date_updated`) VALUES
-(1, 'Admin Smart BPTP', 'smartbptpadmin@gmail.com', 'smartbptp', 'ed813787a911e7188845d8ee891bc3ced9717af6', '2021-06-14 16:37:08', '2021-06-14 16:40:39', '2021-06-14 16:40:39');
+(1, 'Admin Smart BPTP', 'smartbptpadmin@gmail.com', 'smartbptp', 'ed813787a911e7188845d8ee891bc3ced9717af6', '2021-06-14 20:47:15', '2021-06-14 20:47:15', '2021-06-14 20:47:15');
 
 --
 -- Indexes for dumped tables

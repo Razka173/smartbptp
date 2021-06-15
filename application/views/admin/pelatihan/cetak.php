@@ -66,7 +66,8 @@
 			<tr class="bg-success">
 				<th width=5%>NO</th>
 				<th width=20%>NAMA</th>
-				<th width=20%>INSTANSI</th>
+				<th width=15%>INSTANSI</th>
+				<th width=15%>ALAMAT</th>
 				<th width=20%>TUJUAN KUNJUNGAN</th>
 				<th width=20%>TANGGAL KUNJUNGAN</th>
 			</tr>
@@ -75,8 +76,9 @@
 			<?php $i=1; foreach($peserta as $peserta) { ?>
 			<tr>
 				<td> <?php echo $i ?> </td>
-				<td> <?php if(strlen($peserta->nama)>30){echo substr($peserta->nama, 0, 19)."...";}else{echo $peserta->nama;} ?></td>
+				<td> <?php if(strlen($peserta->nama)>30){echo substr($peserta->nama, 0, 30)."...";}else{echo $peserta->nama;} ?></td>
 				<td> <?php if(strlen($peserta->instansi)>30){echo substr($peserta->instansi, 0, 30)."...";}else{echo $peserta->instansi;} ?> </td>
+				<td> <?php if(strlen($peserta->alamat)>30){echo substr($peserta->alamat, 0, 30)."...";}else{echo $peserta->alamat;} ?> </td>
 				<td> <?php if(strlen($peserta->tujuan_kunjungan)>30){echo substr($peserta->tujuan_kunjungan, 0, 30)."...";}else{echo $peserta->tujuan_kunjungan;} ?> </td>
 				<td><?php echo strftime('%e %B %Y', strtotime($peserta->tanggal_kunjungan)) ?></td>
 			</tr>

@@ -16,10 +16,6 @@
 		<th width="25%">INSTANSI</th>
 		<th> <?php echo $object->instansi ?></th>
 	</tr>
-	<tr>
-		<th width="25%">NOMOR INDUK</th>
-		<th> <?php echo $object->nomor_induk ?></th>
-	</tr>
 </thead>
 <tbody>
 	<tr>

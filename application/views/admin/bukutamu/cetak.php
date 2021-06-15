@@ -66,10 +66,11 @@
 			<tr class="bg-success">
 				<th width="5%">NO</th>
 				<th width="20%">NAMA</th>
+				<th width="15%">NIK</th>
 				<th width="20%">INSTANSI</th>
-				<th width="25%">TUJUAN KUNJUNGAN</th>
-				<th width="15%">NOMOR TELEPON</th>
-				<th width="15%">TANGGAL KUNJUNGAN</th>
+				<th width="20%">TUJUAN KUNJUNGAN</th>
+				<th width="10%">NOMOR TELEPON</th>
+				<th width="10%">TANGGAL KUNJUNGAN</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -77,6 +78,7 @@
 			<tr>
 				<td> <?php echo $i ?> </td>
 				<td> <?php if(strlen($tamu->nama)>30){echo substr($tamu->nama, 0, 30)."...";}else{echo $tamu->nama;} ?></td>
+				<td> <?php if(strlen($tamu->nik)>16){echo substr($tamu->nik, 0, 16)."...";}else{echo $tamu->nik;} ?></td>
 				<td> <?php if(strlen($tamu->instansi)>30){echo substr($tamu->instansi, 0, 30)."...";}else{echo $tamu->instansi;} ?> </td>
 				<td> <?php if(strlen($tamu->tujuan_kunjungan)>30){echo substr($tamu->tujuan_kunjungan, 0, 30)."...";}else{echo $tamu->tujuan_kunjungan;} ?> </td>
 				<td> <?php if(strlen($tamu->nomor_telepon)>15){echo substr($tamu->nomor_telepon, 0, 15)."...";}else{echo $tamu->nomor_telepon;} ?> </td>

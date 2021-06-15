@@ -92,31 +92,31 @@ echo form_open_multipart(base_url('pelatihan/daftar'),' class="form-horizontal"'
                     <div class="mb-3">
                         <label class="form-label">Tujuan Kunjungan<label style="color: red;">*</label></label>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="tujuan_kunjungan" id="studibanding" value="Studi Banding" checked>
+                            <input class="form-check-input" type="radio" name="tujuan_kunjungan" id="studibanding" value="Studi Banding" checked onclick="javascript:yesnoCheck();">
                             <label class="form-check-label" for="studibanding">
                                 Studi Banding
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="tujuan_kunjungan" id="kunjunganedu" value="Kunjungan Edukatif">
+                            <input class="form-check-input" type="radio" name="tujuan_kunjungan" id="kunjunganedu" value="Kunjungan Edukatif" onclick="javascript:yesnoCheck();">
                             <label class="form-check-label" for="kunjunganedu">
                                 Kunjungan Edukatif
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="tujuan_kunjungan" id="pelatihan" value="Pelatihan">
+                            <input class="form-check-input" type="radio" name="tujuan_kunjungan" id="pelatihan" value="Pelatihan" onclick="javascript:yesnoCheck();">
                             <label class="form-check-label" for="pelatihan">
                                 Pelatihan
                             </label>
+                            <input type="text" class="form-control" id="isi_pelatihan" name="isi_pelatihan" placeholder="Isi materi pelatihan yang anda inginkan disini. Misal: Hidroponik" style="display: none">
+                       
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="tujuan_kunjungan" id="yglainnya" value="">
-                            <label class="form-check-label" for="yglainnya">
-                                Yang Lainnya:
+                            <input class="form-check-input" type="radio" name="tujuan_kunjungan" id="lainnya" value="Lainnya" onclick="javascript:yesnoCheck();">
+                            <label class="form-check-label" for="lainnya">
+                                Yang Lainnya
                             </label>
-                        </div>
-                        <div class="col-md-3">
-                            <input type="text" class="form-control" id="yglainnya" name="yglainnya">
+                            <input type="text" class="form-control" id="isi_lainnya" name="isi_lainnya" placeholder="Isi tujuan kunjungan Anda" style="display: none">
                         </div>
                     </div>
                     <div class="mb-3">
@@ -137,6 +137,30 @@ echo form_open_multipart(base_url('pelatihan/daftar'),' class="form-horizontal"'
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></script>
     <script src="js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+
+        function yesnoCheck() {
+            if (document.getElementById('pelatihan').checked) {
+                document.getElementById('isi_pelatihan').style.display = 'block';
+                document.getElementById("isi_pelatihan").required = true;
+            } else {
+                document.getElementById('isi_pelatihan').style.display = 'none';
+                document.getElementById('isi_pelatihan').value = '';
+                document.getElementById("isi_pelatihan").removeAttribute("required");
+            }
+            if (document.getElementById('lainnya').checked) {
+                document.getElementById('isi_lainnya').style.display = 'block';
+                document.getElementById("isi_lainnya").required = true;
+            } else {
+                document.getElementById('isi_lainnya').style.display = 'none';
+                document.getElementById('isi_lainnya').value = '';
+                document.getElementById("isi_lainnya").removeAttribute("required");
+            }
+        }
+
+    </script>
+
    
     </body>
 </html>
