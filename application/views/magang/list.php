@@ -59,7 +59,7 @@
                 foreach ($pkl as $pkl){?>
             <tr>
                 <th scope="row"><?php echo $no ?></th>
-                <td><?php echo $pkl->nama; if($pkl->jumlah_anggota>1){echo ", ".$pkl->nama_anggota;}?></td>
+                <td><?php echo $pkl->nama; if($pkl->jumlah_anggota>1){echo " (".$pkl->nama_anggota.")";}?></td>
                 <td><?php echo $pkl->instansi ?></td>
                 <td><?php echo strftime('%B %Y', strtotime($pkl->tanggal_masuk)) ?></td>
             </tr>

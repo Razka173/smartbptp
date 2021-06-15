@@ -21,11 +21,11 @@ if($this->session->flashdata('warning')){
 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
     <thead>
         <tr>
-            <th class="col-auto">No</th>
-            <th class="col-auto">Nama</th>
-            <th class="col-auto">Instansi</th>
-            <th class="col-auto">Tanggal Kunjungan</th>
-            <th class="col-xl-2">Action</th>
+            <th width="5%">No</th>
+            <th width="25%">Nama</th>
+            <th width="25%">Instansi</th>
+            <th width="25%">Tanggal Kunjungan</th>
+            <th width="20%">Action</th>
         </tr>
     </thead>
     <tbody>

@@ -22,10 +22,10 @@ if($this->session->flashdata('warning')){
     <thead>
         <tr>
             <th width="5%">No</th>
-            <th class="">Nama</th>
-            <th class="">Instansi</th>
-            <th class="">Materi</th>
-            <th class="">Bulan Magang</th>
+            <th width="25%">Nama</th>
+            <th width="20%">Instansi</th>
+            <th width="15%">Materi</th>
+            <th width="15%">Bulan Magang</th>
             <th width="20%">Action</th>
         </tr>
     </thead>
