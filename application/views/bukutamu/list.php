@@ -61,7 +61,7 @@ echo form_open_multipart(base_url('bukutamu'),' class="form-horizontal"');
                     </div>
                     
                     <div class="mb-1">
-                        <input type="text" placeholder="NIK (opsional)" class="form-control" id="nik" name="nik" value="<?php echo set_value('nik')?>">
+                        <input type="text" placeholder="NIK" class="form-control" id="nik" name="nik" value="<?php echo set_value('nik')?>">
                     </div>
 
                     <div class="mb-1">

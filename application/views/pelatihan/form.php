@@ -68,12 +68,8 @@ echo form_open_multipart(base_url('pelatihan/daftar'),' class="form-horizontal"'
                         <input type="text" class="form-control" id="nama" name="nama" value="<?php echo set_value('nama')?>" required>
                     </div>
                     <div class="mb-3">
-                        <label for="asalinstansi" class="form-label">Asal Instansi/Sekolah/Perguruan Tinggi<label style="color: red;">*</label></label>
+                        <label for="asalinstansi" class="form-label">Asal Instansi<label style="color: red;">*</label></label>
                         <input type="text" class="form-control" id="instansi" name="instansi" value="<?php echo set_value('instansi')?>" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="noinduk" class="form-label">Nomor Induk<label style="color: red;">*</label></label>
-                        <input type="text" class="form-control" id="nomor_induk" name="nomor_induk" value="<?php echo set_value('nomor_induk')?>" required>
                     </div>
                     <div class="mb-3">
                         <label for="alamat" class="form-label">Alamat<label style="color: red;">*</label></label>

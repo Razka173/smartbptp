@@ -21,8 +21,8 @@
     <?php foreach($tamu as $tamu){?>
     <tr>
       <td> <?php echo $no ?> </td>
-      <td> <?php if(strlen($tamu->nama)>30){echo substr($tamu->nama, 0, 20)."...";}else{echo $tamu->nama;} ?></td>
-      <td> <?php if(strlen($tamu->instansi)>30){echo substr($tamu->instansi, 0, 20)."...";}else{echo $tamu->instansi;} ?></td>
+      <td> <?php if(strlen($tamu->nama)>30){echo substr($tamu->nama, 0, 30)."...";}else{echo $tamu->nama;} ?></td>
+      <td> <?php if(strlen($tamu->instansi)>30){echo substr($tamu->instansi, 0, 30)."...";}else{echo $tamu->instansi;} ?></td>
       <td> <?php if(strlen($tamu->tujuan_kunjungan)>30){echo substr($tamu->tujuan_kunjungan, 0, 30)."...";}else{echo $tamu->tujuan_kunjungan;} ?> </td>
       <td> <?php if(strlen($tamu->nomor_telepon)>15){echo substr($tamu->nomor_telepon, 0, 15)."...";}else{echo $tamu->nomor_telepon;} ?></td>
       <td> <?php echo strftime('%A, %e %B %Y', strtotime($tamu->date_created)) ?></td>
