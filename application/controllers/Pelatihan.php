@@ -96,22 +96,25 @@ class Pelatihan extends CI_Controller {
 							);
 				$this->Pelatihan_model->tambah($data);
 
+				// BEGIN KIRIM EMAIL
 				$admin = $this->Admin_model->listing();
 				$emails = array();
 				foreach ($admin as $admin){
 					$email = $admin->email;
 					array_push($emails, $email);					
 				}
+				$waktu = strftime('%A, %e %B %Y', strtotime($i->post('tanggal_kunjungan')));
 				$subject_admin = "[No-Reply] Pelatihan Teknologi BPTP Jakarta";
-				$message_admin = "Hai Admin, ada yang mendaftar Pelatihan Teknologi";
+				$message_admin = "Hai Admin, ada yang mendaftar Pelatihan Teknologi!<br>"."Nama: ".$i->post('nama')."<br>"."Instansi: ".$i->post('instansi')."<br>"."Alamat: ".$i->post('alamat')."<br>"."Nomor Telepon: ".$i->post('nomor_telepon')."<br>"."Email: ".$i->post('email')."<br>"."Tanggal Kunjungan: ".$waktu."<br>"."Tujuan Kunjungan: ".$tujuan_kunjungan."<br><br><a href='".base_url('admin/dasbor')."' class='btn btn-info btn-xs'>Link Halaman Admin SMART BPTP</a>";
 				$kirim_email_admin = $this->kirim_email($emails, $subject_admin, $message_admin);
 
 				$to = $i->post('email');
 				$subject = "[No-Reply] Pelatihan Teknologi BPTP Jakarta";
 				$message = "Terimakasih sudah mendaftar";
 				$kirim_email = $this->kirim_email($to, $subject, $message);
+				// END KIRIM EMAIL
 			
-				// KIRIM EMAIL
+				// BEGIN CEK KIRIM EMAIL
 		    	if ($kirim_email){
 		    		$this->session->set_flashdata('sukses', 'Anda telah terdaftar');
 					redirect(base_url('pelatihan/terimakasih'),'refresh');
@@ -119,6 +122,7 @@ class Pelatihan extends CI_Controller {
 		    		$this->session->set_flashdata('sukses', 'Anda telah terdaftar');
 					redirect(base_url('pelatihan/terimakasih'),'refresh');
 		   		}
+		   		// END CEK KIRIM EMAIL
 
 				$this->session->set_flashdata('sukses', 'Anda telah terdaftar');
 				redirect(base_url('pelatihan/terimakasih'),'refresh');
