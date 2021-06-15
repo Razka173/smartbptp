@@ -8,7 +8,7 @@ class Smartbptp extends CI_Controller {
         // Construct the parent class
         parent::__construct();
         $this->load->model('Magang_model');
-        $this->load->model('Surat_model');
+        $this->load->model('Pelatihan_model');
     }
 
 	public function index()
