@@ -25,6 +25,16 @@ class Bukutamu extends CI_Controller {
 		$this->load->view('admin/layout/wrapper', $data, FALSE);
 	}
 
+	public function detail($id)
+    {
+        $object = $this->Bukutamu_model->detail($id);
+        $data = array(  'title'             => 'Detail: '.$object->nama,
+                        'object'            => $object,
+                        'isi'               => 'admin/bukutamu/detail'
+                    );
+        $this->load->view('admin/layout/wrapper', $data, FALSE);    
+    }
+
 	public function pdf()
 	{
 		$namafile = "Bukutamu_";
@@ -37,6 +47,16 @@ class Bukutamu extends CI_Controller {
 		$mpdf->WriteHTML($html);
 		$mpdf->Output($namafile.date("Y/m/d").'.pdf', 'I');
 	}
+
+	// Delete data buku tamu
+    public function delete($id_bukutamu)
+    {
+        $tamu = $this->Bukutamu_model->detail($id_bukutamu);
+        $data = array('id_bukutamu'   => $id_bukutamu);
+        $this->Bukutamu_model->delete($data);
+        $this->session->set_flashdata('sukses', 'Data telah dihapus');
+        redirect(base_url('admin/bukutamu'),'refresh');
+    }
 
 }
 
