@@ -185,7 +185,7 @@ echo form_open_multipart(base_url('magang/daftar'),' class="form-horizontal"');
                     <div class="mb-3">
                         <label for="capthca">Security Code<label style="color: red;">*</label></label>
                         <div class="mb-1"><?php echo $captcha['image'] ?></div>
-                        <input type="text" class="form-inline" style="width: 150" placeholder="Security Code" name="captcha" id="captcha" value="" required>
+                        <input type="text" class="form-inline dropzone" style="width: 150" placeholder="Security Code" name="captcha" id="captcha" value="" required>
                     </div>
                     <div class="mb-3">
                         <label style="color: red;"><i>*cukup satu perwakilan anggota yang mengisi</i></label>
